@@ -99,7 +99,7 @@
                 $("#myInput").val(searchText);
                 
                 $("#myTable tr").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
                 });
             }
 
