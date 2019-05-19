@@ -84,17 +84,24 @@
                         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                     });
                 });
-
-                var searchText = getParameterByName('search');
-                // $("#myInput").text(searchText);
-                $("#myInput").val(searchText);
-               
+                
+                filter();                
             });
 
             (adsbygoogle = window.adsbygoogle || []).push({
                 google_ad_client: "ca-pub-2057506584352538",
                 enable_page_level_ads: true
             });
+            
+            function filter()
+            {
+                var searchText = getParameterByName('search');                
+                $("#myInput").val(searchText);
+                
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            }
 
             function getParameterByName(name, url) {
                 if (!url)
