@@ -98,6 +98,8 @@
                 var searchText = getParameterByName('search');                
                 $("#myInput").val(searchText);
                 
+                searchText = searchText.toLowerCase();
+                
                 $("#myTable tr").filter(function() {
                     $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
                 });
