@@ -5,14 +5,56 @@
       <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
       <meta http-equiv="Pragma" content="no-cache">
       <meta http-equiv="Expires" content="0">      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
       <title>Subtitles</title>   
       
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      
 
+       
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
       
    </head>   
-   <body>                  
-     <p>Subtitles</p>
+   <body>  
+      <div class="container">
+     <p><b>Subtitles:</></p>
+          <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+        
+        
+        <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        
+      </tr>
+    </thead>
+           
+    <tbody id="myTable">
+      <tr>
+        <td>Catch-22 / Параграф 22 - Season 1</td>
+        <td>
+           <a id="catch22" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z">Catch-22 / Параграф 22 - Season 1</a>
+       </td>
+         
+      </tr>
+      <tr>
+        <td>
+           <a id="catch22" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z">Catch-22 / Параграф 22 - Season 1</a>
+      </td>
+        <td></td>
+      
+      </tr>
+     
+     
+    </tbody>
+  </table>
+        
             
       <!--  https://pzprovi.github.io/index.html#catch22 -->
       <a id="catch22" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z">Catch-22 / Параграф 22 - Season 1</a>
@@ -24,7 +66,22 @@
     google_ad_client: "ca-pub-2057506584352538",
     enable_page_level_ads: true
   });
+ 
+         
+         
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+         
+         
+         
 </script>
-      
+
+      </div>
    </body>
 </html>
