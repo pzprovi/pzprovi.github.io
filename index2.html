@@ -1004,7 +1004,7 @@
   		// var value = $(this).val().toLowerCase();
 		var value = getParameterByName('search');
                 $("#searchTable a").filter(function() {
-                    // $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
 	    });
 		
@@ -1020,7 +1020,7 @@
             searchText = searchText.toLowerCase();
 
             $("#searchTable a").filter(function() {
-                // $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
+            	// $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
             });
         }
 
