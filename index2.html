@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
     <title>Subtitles</title>
     <!-- custom-theme -->
@@ -143,14 +144,18 @@
 						 
 					</tr>
 				</thead>
+				
+				<tbody id="myTable">	
+				</tbody>
+				
 				-->
 		    
-				<tbody id="myTable">							
-					<div class="col-md-10 team-Info-agileits">
+										
+					<div id="searchTable" class="col-md-10 team-Info-agileits">
 						<a id="catch22" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z"><p>Catch-22 / Параграф 22 - Season 1</p></a>
-						<a id="catch22" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z"><p>Catch-33 / Параграф 33 - Season 1</p></a>
+						<a id="catch92" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z"><p>Catch-33 / Параграф 33 - Season 1</p></a>
 					</div>     																																		
-				</tbody>
+				
 			</table>
 								                                                                          
                     <div class="more">
@@ -987,9 +992,9 @@
                 easingType: 'easeOutQuart'
             });
 
-            $("#myInput").on("keyup", function() {
+            $("#search").on("keyup", function() {
                 var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function() {
+                $("#searchTable a").filter(function() {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
@@ -1000,15 +1005,16 @@
 
         function filter() {
             var searchText = getParameterByName('search');
-            $("#myInput").val(searchText);
+            $("#search").val(searchText);
 
             searchText = searchText.toLowerCase();
 
-            $("#myTable tr").filter(function() {
+            $("#searchTable a").filter(function() {
                 $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
             });
         }
 
+		// get queryParams from url
         function getParameterByName(name, url) {
             if (!url)
                 url = window.location.href;
@@ -1021,6 +1027,7 @@
                 return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
+        
     </script>
     <!-- //here ends scrolling icon -->
 
