@@ -59,7 +59,7 @@
                     <div class="w3_menu">
                         <div class="agileits_w3layouts_banner_info">
 
-                            <form action="#" method="post">
+                            <form id="target" action="#" method="post">
                                 <input type="search" id="search" name="search" placeholder="Search here..." required="">
                                 <input type="submit" value="Search">
                             </form>
@@ -999,6 +999,14 @@
                     // $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
+		
+	    $( "#target" ).submit(function( event ) {
+  		var value = $(this).val().toLowerCase();
+                $("#searchTable a").filter(function() {
+                    // $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+	    });
+		
 
             filter();
 
