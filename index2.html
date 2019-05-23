@@ -1001,8 +1001,10 @@
             });
 		
 	    $( "#target" ).submit(function( event ) {
-  		// var value = $(this).val().toLowerCase();
-		var value = getParameterByName('search');
+  		var value = $('[name=search]').val().toLowerCase();
+		// var value = $(this).val().toLowerCase();		
+		// var value = getParameterByName('search');
+		// $('[name=whatever]').val()
                 $("#searchTable a").filter(function() {
                 	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
