@@ -135,26 +135,30 @@
             <div class="agile_info_top">
                 <div class="col-md-6 about_agile_info">
                     <h2>Subtitles</h2>
-                                                           
-                     	<table class="table table-bordered table-striped">
-				
-											
-					<div id="searchTable" class="col-md-10 team-Info-agileits">
-						<a id="catch22" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z"><p>bbbb</p></a>
-						<a id="catch92" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z"><p>aaa</p></a>
-						<a id="catch929" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z"><p>ccc</p></a>
-					</div>   
-				
-				
-			</table>
-								                                                                          
+
+                    <table class="table table-bordered table-striped">
+
+                        <div id="searchTable" class="col-md-10 team-Info-agileits">
+                            <a id="catch22" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z">
+                                <p>bbbb</p>
+                            </a>
+                            <a id="catch92" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z">
+                                <p>aaa</p>
+                            </a>
+                            <a id="catch929" href="https://dl.dropbox.com/s/p4xg7040xjo9dvd/Catch.22.S01.HULU.WEBRip.AAC2.0.x264-TBS.7z">
+                                <p>ccc</p>
+                            </a>
+                        </div>
+
+                    </table>
+
                     <div class="more">
                         <!-- <a href="#" class="hvr-shutter-in-vertical" data-toggle="modal" data-target="#myModal">Show All<span class="glyphicon glyphicon-arrow-right"></span></a>  -->
-    		        <a href="https://pzprovi.github.io" class="hvr-shutter-in-vertical">Show All<span class="glyphicon glyphicon-arrow-right"></span></a>
+                        <a href="https://pzprovi.github.io" class="hvr-shutter-in-vertical">Show All<span class="glyphicon glyphicon-arrow-right"></span></a>
                     </div>
                 </div>
 
-		    <!--
+                <!--
                 <div class="col-md-6 agile_about_aits-image">
                     <div class="aboutaits-image-1">
                         <img src="images/about-1.jpg" alt="Couture">
@@ -165,7 +169,7 @@
                     <div class="clearfix"></div>
                 </div>
 		    -->
-		    
+
                 <div class="clearfix"></div>
 
                 <!-- Tooltip -->
@@ -252,7 +256,7 @@
     </div>
     <!-- //services -->
     <!-- team -->
-	<!--
+    <!--
     <div class="team" id="team">
         <div class="container">
             <div class="w3_tittle second two">
@@ -405,7 +409,7 @@
      -->
     <!--- //news -->
     <!-- //gallery -->
-	
+
     <!-- gallery -->
     <!--
     <div class="gallery" id="gallery">      
@@ -590,7 +594,7 @@
     </div>
     -->
     <!-- //gallery -->
-	
+
     <div class="lb-overlay" id="image-1">
         <img src="images/g1.jpg" alt="image1" />
         <div class="gal-info">
@@ -683,7 +687,7 @@
                         <div class="wthree_testimonials_grid_main">
                             <div class="wthree_testimonials_grid">
                                 <h4>What they say</h4>
-                                <p>Благодаря ти!  :thumbsup:</p>
+                                <p>Благодаря ти! :thumbsup:</p>
                                 <h5>paxicam2021 (Power User)</h5>
                                 <div class="wthree_testimonials_grid_pos">
                                     <img src="https://zamunda.net/pic/pic/noposter_black.jpg" alt=" " class="img-responsive" />
@@ -778,7 +782,7 @@
                         </ul>
                     </div>
                 </div>
-		  <!--  
+                <!--  
                 <div class="col-md-4 w3-agile-grid">
                     <h5>Recent Posts</h5>
                     <div class="w3ls-post-grids">
@@ -814,8 +818,8 @@
                         </div>
                     </div>
                 </div>
-		   --> 
-		    
+		   -->
+
                 <div class="col-md-4 w3-agile-grid">
                     <h5>Address</h5>
                     <div class="w3-address">
@@ -1000,17 +1004,16 @@
                     // $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
-		
-	    $( "#target" ).submit(function( event ) {
-  		var value = $('[name=search]').val().toLowerCase();
-		// var value = $(this).val().toLowerCase();		
-		// var value = getParameterByName('search');
-		// $('[name=whatever]').val()
+
+            $("#target").submit(function(event) {
+                var value = $('[name=search]').val().toLowerCase();
+                // var value = $(this).val().toLowerCase();		
+                // var value = getParameterByName('search');
+                // $('[name=whatever]').val()
                 $("#searchTable a").filter(function() {
-                	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
-	    });
-		
+            });
 
             filter();
 
@@ -1023,11 +1026,11 @@
             searchText = searchText.toLowerCase();
 
             $("#searchTable a").filter(function() {
-            	 $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
+                $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1)
             });
         }
 
-		// get queryParams from url
+        // get queryParams from url
         function getParameterByName(name, url) {
             if (!url)
                 url = window.location.href;
@@ -1040,7 +1043,6 @@
                 return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
-        
     </script>
     <!-- //here ends scrolling icon -->
 
