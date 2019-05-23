@@ -1014,7 +1014,12 @@
                 // $('[name=whatever]').val()
                 $("#searchTable a").filter(function() {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-					scroll();
+					// scroll();
+					
+					//$('html, body').animate({    		
+			 			scrollTop: $("#searchTable").offset().top;
+					//}, 1000);
+					
                 });
             });
 
