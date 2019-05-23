@@ -1045,6 +1045,32 @@
                 return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
+	    
+	function scroll(){
+		// subtitles_locate
+		// <a id="subtitles_locate" href=
+		// $('a[href^="#"]')
+					
+		$('html, body').animate({
+    		// scrollTop: $("#target-element").offset().top
+			scrollTop: $('a[id^="subtitles_locate"]').offset().top
+		}, 1000);
+		
+		/*
+		
+		$('a[id^="subtitles_locate"]')
+		
+		var target = $(this.getAttribute('href'));
+		
+	 	if( target.length ) {
+			event.preventDefault();
+			$('html, body').stop().animate({
+				scrollTop: target.offset().top
+			}, 1000);
+    	}
+		*/
+	}
+		
     </script>
     <!-- //here ends scrolling icon -->
 
