@@ -1035,8 +1035,10 @@
 
         function filter() {
             var searchText = getParameterByName('search');
-            $("#search").val(searchText);
-
+            if (searchText == null)
+				return
+			
+			$("#search").val(searchText);						
             searchText = searchText.toLowerCase();
 
             $("#searchTable a").filter(function() {
@@ -1069,7 +1071,7 @@
                 // scrollTop: $("#target-element").offset().top
                 // scrollTop: $('a[id^="subtitles_locate"]').offset().top;
                 // scrollTop: $("#searchTable").offset().top
-		 scrollTop: $("#about").offset().top    
+		 		scrollTop: $("#about").offset().top    
 		    
             }, 1000);
 
