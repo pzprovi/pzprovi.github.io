@@ -1,3 +1,11 @@
+RewriteEngine On
+RewriteRule ^404/?$ https://pzprovi.github.io [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^ https://pzprovi.github.io [L,R]
+
+
 ErrorDocument 404 https://pzprovi.github.io
 ErrorDocument 500 https://pzprovi.github.io
 
