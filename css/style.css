@@ -352,11 +352,15 @@ li.dropdown.act a.w3_icons_act {
     margin-top: 7em;
 }
 .adversta{      
-    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);    
+    height: 30px;
+    width: 30px;     
+    margin-right: 0.4em;    
+    transition: .5s all;   
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);   
     line-height: 30px;
-	color:#fff; 
-	-webkit-border-radius:50%;	 
-	text-align:center;
+    color: #fff;    
+    -webkit-border-radius: 50%;  
+    text-align: center;
 } 
 
 ul.social-icons3{
