@@ -1,0 +1,6 @@
+ErrorDocument 404 https://pzprovi.github.io/
+ErrorDocument 500 https://pzprovi.github.io/
+
+RewriteEngine On
+RewriteBase /
+
