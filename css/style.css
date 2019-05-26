@@ -349,8 +349,16 @@ li.dropdown.act a.w3_icons_act {
 .w3_agileits_social_media {
     float: right;
     padding: 6em 6em 0 0em;
-       margin-top: 7em;
+    margin-top: 7em;
 }
+.adversta{      
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);    
+    line-height: 30px;
+	color:#fff; 
+	-webkit-border-radius:50%;	 
+	text-align:center;
+} 
+
 ul.social-icons3{
 	display:block;
 	padding: 0;
@@ -367,7 +375,7 @@ ul.social-icons3 li a{
     -webkit-transition: .5s all;
     transition: .5s all;
     -moz-transition: .5s all;
-	    margin-right: 0.4em;
+	margin-right: 0.4em;
 	-webkit-transition: .5s all;
     transition: .5s all;
     -moz-transition: .5s all;
@@ -383,7 +391,7 @@ ul.social-icons3 li a{
 	-moz-border-radius:50%;
 	-o-border-radius:50%;
 	text-align:center;
-}
+} 
 ul.social-icons3 li a.wthree_facebook{
 	 background:#4D669C;
 }
