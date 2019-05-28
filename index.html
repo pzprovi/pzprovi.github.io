@@ -1101,8 +1101,10 @@
 
         function filter() {
             var searchText = getParameterByName('search');
-            if (searchText == null)
-                return
+            if (searchText == null){
+				LoadBalancer("");
+                return				
+			}
 
             $("#search").val(searchText);
             searchText = searchText.toLowerCase();
