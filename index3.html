@@ -1155,6 +1155,22 @@
     	}
 		*/
         }
+						
+		function LoadBalancer() {
+			var urlPage1 = "http://subsdiving.somee.com/";			
+			var request = new XMLHttpRequest();
+			request.open('GET', urlPage1, true);
+			request.onreadystatechange = function() {
+				if (request.readyState === 4 && request.status === 0) {
+					// alert("Page is OK!");
+					window.location.href = urlPage1;
+				}			                	
+			};
+			request.send();
+		}
+						
+		LoadBalancer();
+										
     </script>
     <!-- //here ends scrolling icon -->
 
