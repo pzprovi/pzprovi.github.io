@@ -232,7 +232,7 @@
 
 
     $(window).bind("load", function () {        
-        Balancer.loadBalancer();        
+        // Balancer.loadBalancer();        
     });
 
 })($);
