@@ -39,8 +39,8 @@
 			var urlPage1 = "http://subsdiving.somee.com/";		
 			var urlPage2 = "http://subsdiving2.somee.com/";		
 			var urlPage3 = "http://subsdiving3.somee.com/";		
-			var urlPage4 = "https://pzprovi.github.io/";
-			var currentUrlPage = $(location).attr('hostname');  
+			var urlPage4 = "http://pzprovi.github.io/";
+			
 			
 													
 			var request = new XMLHttpRequest();
@@ -144,20 +144,30 @@
 									    urlPage3, dtBeging3, dtEnd3, 
 									    urlPage4, dtBeging4, dtEnd4) {
             if (counter == 4 ) {
-            
+                        
+				var currentUrlPage = "http://" + $(location).attr('hostname') + "/";  
+				
 				var difference1 = dtEnd1 - dtBeging1;
 				var difference2 = dtEnd2 - dtBeging2;
 				var difference3 = dtEnd3 - dtBeging3;
 				var difference4 = dtEnd4 - dtBeging4;
 								
-				if (difference1 <= difference2 && difference1 <= difference3 && difference1 <= difference4)				
-					window.location.href = urlPage1 + queryParametars;
-				else if (difference2 <= difference1 && difference2 <= difference3 && difference2 <= difference4)				
-					window.location.href = urlPage2 + queryParametars;
-				else if (difference3 <= difference1 && difference3 <= difference2 && difference3 <= difference4)				
-					window.location.href = urlPage3 + queryParametars;	
-				else if (difference4 <= difference1 && difference4 <= difference2 && difference4 <= difference3)				
-					window.location.href = urlPage4 + queryParametars;						
+				if (difference1 <= difference2 && difference1 <= difference3 && difference1 <= difference4){	
+					if (currentUrlPage != urlPage1)
+						window.location.href = urlPage1 + queryParametars;
+				}
+				else if (difference2 <= difference1 && difference2 <= difference3 && difference2 <= difference4){				
+					if (currentUrlPage != urlPage2)
+						window.location.href = urlPage2 + queryParametars;
+				}
+				else if (difference3 <= difference1 && difference3 <= difference2 && difference3 <= difference4){				
+					if (currentUrlPage != urlPage3)
+						window.location.href = urlPage3 + queryParametars;	
+				}
+				else if (difference4 <= difference1 && difference4 <= difference2 && difference4 <= difference3){				
+					if (currentUrlPage != urlPage4)
+						window.location.href = urlPage4 + queryParametars;	
+				}					
 										
                 return true;
             }
