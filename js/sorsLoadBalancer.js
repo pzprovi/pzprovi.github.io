@@ -45,7 +45,7 @@
 					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
-					redirectToFastMirror(_mirrorCheck,queryParametars,
+					Balancer.redirectToFastMirror(_mirrorCheck,queryParametars,
 								 urlPage1,dtBeging1,dtEnd1,
 								 urlPage2,dtBeging2,dtEnd2,
 								 urlPage3,dtBeging3,dtEnd3,
@@ -64,7 +64,7 @@
 					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
-					redirectToFastMirror(_mirrorCheck,queryParametars,
+					Balancer.redirectToFastMirror(_mirrorCheck,queryParametars,
 								 urlPage1,dtBeging1,dtEnd1,
 								 urlPage2,dtBeging2,dtEnd2,
 								 urlPage3,dtBeging3,dtEnd3,
@@ -82,7 +82,7 @@
 					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
-					redirectToFastMirror(_mirrorCheck,queryParametars,
+					Balancer.redirectToFastMirror(_mirrorCheck,queryParametars,
 								 urlPage1,dtBeging1,dtEnd1,
 								 urlPage2,dtBeging2,dtEnd2,
 								 urlPage3,dtBeging3,dtEnd3,
@@ -100,7 +100,7 @@
 					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
-					redirectToFastMirror(_mirrorCheck,queryParametars,
+					Balancer.redirectToFastMirror(_mirrorCheck,queryParametars,
 								 urlPage1,dtBeging1,dtEnd1,
 								 urlPage2,dtBeging2,dtEnd2,
 								 urlPage3,dtBeging3,dtEnd3,
