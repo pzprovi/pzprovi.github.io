@@ -40,7 +40,7 @@
 			var urlPage2 = "http://subsdiving2.somee.com/";		
 			var urlPage3 = "http://subsdiving3.somee.com/";		
 			var urlPage4 = "https://pzprovi.github.io/";
-			var current UrlPage = $(location).attr('hostname');  
+			var currentUrlPage = $(location).attr('hostname');  
 			
 													
 			var request = new XMLHttpRequest();
