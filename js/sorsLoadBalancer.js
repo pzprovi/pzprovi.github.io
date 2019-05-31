@@ -42,7 +42,7 @@
 			request.onreadystatechange = function() {
 				if (request.readyState === 4 && request.status === 0) {		
 					dtEnd1 =  new Date($.now());
-					_mirrorCheck++;
+					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
 					redirectToFastMirror(_mirrorCheck,queryParametars,
@@ -61,7 +61,7 @@
 			request2.onreadystatechange = function() {
 				if (request2.readyState === 4 && request2.status === 0) {		
 					dtEnd2 =  new Date($.now());
-					_mirrorCheck++;
+					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
 					redirectToFastMirror(_mirrorCheck,queryParametars,
@@ -79,7 +79,7 @@
 			request3.onreadystatechange = function() {
 				if (request3.readyState === 4 && request3.status === 0) {
 					dtEnd3 =  new Date($.now());
-					_mirrorCheck++;
+					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
 					redirectToFastMirror(_mirrorCheck,queryParametars,
@@ -97,7 +97,7 @@
 			request4.onreadystatechange = function() {
 				if (request4.readyState === 4 && request4.status === 0) {
 					dtEnd4 =  new Date($.now());
-					_mirrorCheck++;
+					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
 					redirectToFastMirror(_mirrorCheck,queryParametars,
