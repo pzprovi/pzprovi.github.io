@@ -106,7 +106,7 @@
 					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
-					Balancer.redirectToFastMirror(_mirrorCheck,queryParametars,
+					Balancer.redirectToFastMirror(Balancer._mirrorCheck,queryParametars,
 								 urlPage1,dtBeging1,dtEnd1,
 								 urlPage2,dtBeging2,dtEnd2,
 								 urlPage3,dtBeging3,dtEnd3,
