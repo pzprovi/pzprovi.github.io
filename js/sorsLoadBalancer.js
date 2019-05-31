@@ -164,7 +164,7 @@
 
     // Fake some of Object.create so we can force non test results to be non "own" properties.
     var Balancer = function () { };
-    Balancer.prototype = SpinnerPrototype;
+    Balancer.prototype = BalancerPrototype;
 
     // Leak Balancer globally when you `require` it rather than force it here.
     // Overwrite name so constructor name is nicer :D
