@@ -46,6 +46,14 @@
 			var request3 = new XMLHttpRequest();
 			var request4 = new XMLHttpRequest();
 			
+			
+			if (isIeBrowser)
+			{
+				window.location.href = urlPage1 + queryParametars;
+				return;
+			}
+			
+			
 			request.open('GET', urlPage1, true);
 			request.onreadystatechange = function() {
 				Balancer._mirrorCheck++;
@@ -121,8 +129,26 @@
             }
             return false;
         },
-        
-        
+		
+		isIeBrowser: function() 
+		{
+			var ua = window.navigator.userAgent;
+			var msie = ua.indexOf("MSIE");
+
+			if (msie > 0) // If Internet Explorer, return version number
+			{
+				return true;
+				// alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
+			}
+			else  // If another browser, return 0
+			{
+				return false;
+				//alert('otherbrowser');
+			}
+
+			// return false;
+		},
+                     
         redirectToFastMirror: function (counter, queryParametars, 
 									    urlPage1, dtBeging1, dtEnd1, 
 									    urlPage2, dtBeging2, dtEnd2, 
