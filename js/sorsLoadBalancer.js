@@ -135,6 +135,7 @@
 			var ua = window.navigator.userAgent;
 			var msie = ua.indexOf("MSIE ");
 			var edge = ua.indexOf('Edge/');
+			var new_ie = ua.indexOf('Trident/');
 
 			if (msie > -1) // If Internet Explorer, return version number
 			{
@@ -142,6 +143,9 @@
 				// alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
 			}
 			else if (edge> -1){
+				return true;
+			}
+			else if (new_ie> -1){
 				return true;
 			}
 			else  // If another browser, return 0
