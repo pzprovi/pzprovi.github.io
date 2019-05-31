@@ -36,7 +36,13 @@
 			var dtEnd3;
 			var dtEnd4;
 			
-			var urlPage1 = "http://subsdiving.somee.com/";			
+			var urlPage1 = "http://subsdiving.somee.com/";		
+			var urlPage2 = "http://subsdiving2.somee.com/";		
+			var urlPage3 = "http://subsdiving3.somee.com/";		
+			var urlPage4 = "https://pzprovi.github.io/";
+			var current UrlPage = $(location).attr('hostname');  
+			
+													
 			var request = new XMLHttpRequest();
 			request.open('GET', urlPage1, true);
 			request.onreadystatechange = function() {
@@ -45,7 +51,7 @@
 					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
-					Balancer.redirectToFastMirror(_mirrorCheck,queryParametars,
+					Balancer.redirectToFastMirror(Balancer._mirrorCheck,queryParametars,
 								 urlPage1,dtBeging1,dtEnd1,
 								 urlPage2,dtBeging2,dtEnd2,
 								 urlPage3,dtBeging3,dtEnd3,
@@ -55,7 +61,7 @@
 				}			                	
 			};
 						
-			var urlPage2 = "http://subsdiving2.somee.com/";			
+				
 			var request2 = new XMLHttpRequest();
 			request2.open('GET', urlPage2, true);
 			request2.onreadystatechange = function() {
@@ -64,7 +70,7 @@
 					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
-					Balancer.redirectToFastMirror(_mirrorCheck,queryParametars,
+					Balancer.redirectToFastMirror(Balancer._mirrorCheck,queryParametars,
 								 urlPage1,dtBeging1,dtEnd1,
 								 urlPage2,dtBeging2,dtEnd2,
 								 urlPage3,dtBeging3,dtEnd3,
@@ -73,7 +79,7 @@
 				}			                	
 			};
 						
-			var urlPage3 = "http://subsdiving3.somee.com/";			
+				
 			var request3 = new XMLHttpRequest();
 			request3.open('GET', urlPage3, true);
 			request3.onreadystatechange = function() {
@@ -82,7 +88,7 @@
 					Balancer._mirrorCheck++;
 					// window.location.href = urlPage1 + queryParametars;
 					
-					Balancer.redirectToFastMirror(_mirrorCheck,queryParametars,
+					Balancer.redirectToFastMirror(Balancer._mirrorCheck,queryParametars,
 								 urlPage1,dtBeging1,dtEnd1,
 								 urlPage2,dtBeging2,dtEnd2,
 								 urlPage3,dtBeging3,dtEnd3,
@@ -91,7 +97,7 @@
 				}			                	
 			};
 			
-			var urlPage4 = "https://pzprovi.github.io/";			
+						
 			var request4 = new XMLHttpRequest();
 			request4.open('GET', urlPage4, true);
 			request4.onreadystatechange = function() {
