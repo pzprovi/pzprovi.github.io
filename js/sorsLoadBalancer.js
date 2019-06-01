@@ -1,5 +1,3 @@
-
-
 ; (function (window, document, undefined) {
     var tests = [];
 
@@ -35,6 +33,7 @@
 			var dtEnd2;
 			var dtEnd3;
 			var dtEnd4;
+			var dtMaxDate = new Date(8640000000000000).getFullYear();
 			
 			var urlPage1 = "http://subsdiving.somee.com/";		
 			var urlPage2 = "http://subsdiving2.somee.com/";		
@@ -45,16 +44,21 @@
 			var request2 = new XMLHttpRequest();
 			var request3 = new XMLHttpRequest();
 			var request4 = new XMLHttpRequest();
-			
-			
+						
 			if (Balancer.isIeBrowser())
 			{
 				window.location.href = urlPage1 + queryParametars;
 				return;
 			}
-			
-			
+						
 			request.open('GET', urlPage1, true);
+			request.onload = function() {
+    			if (this.status === 404) {
+       				// not found, add some error handling
+					dtEnd1 = dtMaxDate;
+       				return;
+    			}
+			};  
 			request.onreadystatechange = function() {
 				Balancer._mirrorCheck++;
 				if (request.readyState === 4 && request.status === 0) {		
@@ -70,6 +74,13 @@
 			};
 													
 			request2.open('GET', urlPage2, true);
+			request2.onload = function() {
+    			if (this.status === 404) {
+       				// not found, add some error handling
+					dtEnd2 = dtMaxDate;
+       				return;
+    			}
+			}; 
 			request2.onreadystatechange = function() {
 				Balancer._mirrorCheck++;
 				if (request2.readyState === 4 && request2.status === 0) {		
@@ -85,6 +96,13 @@
 				
 			
 			request3.open('GET', urlPage3, true);
+			request3.onload = function() {
+    			if (this.status === 404) {
+       				// not found, add some error handling
+					dtEnd3 = dtMaxDate;
+       				return;
+    			}
+			}; 
 			request3.onreadystatechange = function() {
 				Balancer._mirrorCheck++;
 				if (request3.readyState === 4 && request3.status === 0) {
@@ -99,6 +117,13 @@
 			};
 											
 			request4.open('GET', urlPage4, true);
+			request4.onload = function() {
+    			if (this.status === 404) {
+       				// not found, add some error handling
+					dtEnd4 = dtMaxDate;
+       				return;
+    			}
+			}; 
 			request4.onreadystatechange = function() {
 				Balancer._mirrorCheck++;
 				if (request4.readyState === 4 && request4.status === 0) {
