@@ -33,7 +33,7 @@
 			var dtEnd2;
 			var dtEnd3;
 			var dtEnd4;
-			var dtMaxDate = new Date(8640000000000000).getFullYear();
+			var dtMaxDate = new Date(8640000000000000);
 			
 			var urlPage1 = "http://subsdiving.somee.com/";		
 			var urlPage2 = "http://subsdiving2.somee.com/";		
