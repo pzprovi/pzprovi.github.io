@@ -36,7 +36,7 @@
 			var dtMaxDate = new Date(8640000000000000);
 			
 			var urlPage1 = "http://subsdiving.somee.com/";		
-			var urlPage2 = "http://subsdiving2.somee.com/";		
+			var urlPage2 = "http://subtitles.free.bg/";		
 			var urlPage3 = "http://subsdiving3.somee.com/";		
 			var urlPage4 = "http://pzprovi.github.io/";
 																		
