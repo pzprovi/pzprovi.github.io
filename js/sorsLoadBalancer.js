@@ -9,215 +9,215 @@
      * @access public
      */
 
-    var BalancerPrototype = {        
-        _version: '1.0',       
+    var BalancerPrototype = {
+        _version: '1.0',
         _config: {
             'classPrefix': '',
             'enableClasses': true,
             'enableJSClass': true,
             'usePrefixes': true
         },
-        
+
         _q: [],
         _delay: 400,
         _mirrorCheck: 0,
-                                                
-		loadBalancer: function (queryParametars) {
-			
-			var dtBeging1;
-			var dtBeging2;
-			var dtBeging3;
-			var dtBeging4;
-			
-			var dtEnd1;
-			var dtEnd2;
-			var dtEnd3;
-			var dtEnd4;
-			var dtMaxDate = new Date(8640000000000000);
-			
-			var urlPage1 = "http://subsdiving.somee.com/";		
-			var urlPage2 = "http://subtitles.free.bg/";		
-			var urlPage3 = "http://subsdiving3.somee.com/";		
-			var urlPage4 = "http://pzprovi.github.io/";
-																		
-			var request = new XMLHttpRequest();
-			var request2 = new XMLHttpRequest();
-			var request3 = new XMLHttpRequest();
-			var request4 = new XMLHttpRequest();
-						
-			if (Balancer.isIeBrowser())
-			{
-				window.location.href = urlPage1 + queryParametars;
-				return;
-			}
-						
-			request.open('GET', urlPage1, true);
-			request.onload = function() {
-    			if (this.status === 404) {
-       				// not found, add some error handling
-					dtEnd1 = dtMaxDate;
-       				return;
-    			}
-			};  
-			request.onreadystatechange = function() {
-				Balancer._mirrorCheck++;
-				if (request.readyState === 4 && request.status === 0) {		
-					dtEnd1 =  new Date($.now());													
-					Balancer.redirectToFastMirror(Balancer._mirrorCheck,queryParametars,
-								 urlPage1,dtBeging1,dtEnd1,
-								 urlPage2,dtBeging2,dtEnd2,
-								 urlPage3,dtBeging3,dtEnd3,
-								 urlPage4,dtBeging4,dtEnd4			                 
-			                     );
-					
-				}			                	
-			};
-													
-			request2.open('GET', urlPage2, true);
-			request2.onload = function() {
-    			if (this.status === 404) {
-       				// not found, add some error handling
-					dtEnd2 = dtMaxDate;
-       				return;
-    			}
-			}; 
-			request2.onreadystatechange = function() {
-				Balancer._mirrorCheck++;
-				if (request2.readyState === 4 && request2.status === 0) {		
-					dtEnd2 =  new Date($.now());													
-					Balancer.redirectToFastMirror(Balancer._mirrorCheck,queryParametars,
-								 urlPage1,dtBeging1,dtEnd1,
-								 urlPage2,dtBeging2,dtEnd2,
-								 urlPage3,dtBeging3,dtEnd3,
-								 urlPage4,dtBeging4,dtEnd4			                 
-			                     );
-				}			                	
-			};					
-				
-			
-			request3.open('GET', urlPage3, true);
-			request3.onload = function() {
-    			if (this.status === 404) {
-       				// not found, add some error handling
-					dtEnd3 = dtMaxDate;
-       				return;
-    			}
-			}; 
-			request3.onreadystatechange = function() {
-				Balancer._mirrorCheck++;
-				if (request3.readyState === 4 && request3.status === 0) {
-					dtEnd3 =  new Date($.now());											
-					Balancer.redirectToFastMirror(Balancer._mirrorCheck,queryParametars,
-								 urlPage1,dtBeging1,dtEnd1,
-								 urlPage2,dtBeging2,dtEnd2,
-								 urlPage3,dtBeging3,dtEnd3,
-								 urlPage4,dtBeging4,dtEnd4			                 
-			                     );
-				}			                	
-			};
-											
-			request4.open('GET', urlPage4, true);
-			request4.onload = function() {
-    			if (this.status === 404) {
-       				// not found, add some error handling
-					dtEnd4 = dtMaxDate;
-       				return;
-    			}
-			}; 
-			request4.onreadystatechange = function() {
-				Balancer._mirrorCheck++;
-				if (request4.readyState === 4 && request4.status === 0) {
-					dtEnd4 =  new Date($.now());															
-					Balancer.redirectToFastMirror(Balancer._mirrorCheck,queryParametars,
-								 urlPage1,dtBeging1,dtEnd1,
-								 urlPage2,dtBeging2,dtEnd2,
-								 urlPage3,dtBeging3,dtEnd3,
-								 urlPage4,dtBeging4,dtEnd4			                 
-			                     );
-				}			                	
-			};
-			
-			dtBeging1 = new Date($.now());
-			dtBeging2 = dtBeging1;
-			dtBeging3 = dtBeging1;
-			dtBeging4 = dtBeging1;
-			
-			request.send();
-			request2.send();
-			request3.send();
-			request4.send();										
-		},   
-                              
+
+        loadBalancer: function (queryParametars) {
+
+            var dtBeging1;
+            var dtBeging2;
+            var dtBeging3;
+            var dtBeging4;
+
+            var dtEnd1;
+            var dtEnd2;
+            var dtEnd3;
+            var dtEnd4;
+            var dtMaxDate = new Date(8640000000000000);
+
+            var urlPage1 = "http://subsdiving.somee.com/";
+            var urlPage2 = "http://subtitles.free.bg/";
+            var urlPage3 = "http://subsdiving3.somee.com/";
+            var urlPage4 = "http://pzprovi.github.io/";
+
+            var request = new XMLHttpRequest();
+            var request2 = new XMLHttpRequest();
+            var request3 = new XMLHttpRequest();
+            var request4 = new XMLHttpRequest();
+
+            if (Balancer.isIeBrowser()) {
+                window.location.href = urlPage1 + queryParametars;
+                return;
+            }
+
+            request.open('GET', urlPage1, true);
+            request.onload = function () {
+                if (this.status === 404) {
+                    // not found, add some error handling
+                    dtEnd1 = dtMaxDate;
+                    return;
+                }
+            };
+            request.onreadystatechange = function () {
+                Balancer._mirrorCheck++;
+                if (request.readyState === 4 && request.status === 0) {
+                    dtEnd1 = new Date($.now());
+                    Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
+                        urlPage1, dtBeging1, dtEnd1,
+                        urlPage2, dtBeging2, dtEnd2,
+                        urlPage3, dtBeging3, dtEnd3,
+                        urlPage4, dtBeging4, dtEnd4
+                    );
+
+                }
+            };
+
+            request2.open('GET', urlPage2, true);
+            request2.onload = function () {
+                if (this.status === 404) {
+                    // not found, add some error handling
+                    dtEnd2 = dtMaxDate;
+                    return;
+                }
+            };
+            request2.onreadystatechange = function () {
+                Balancer._mirrorCheck++;
+                if (request2.readyState === 4 && request2.status === 0) {
+                    dtEnd2 = new Date($.now());
+                    Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
+                        urlPage1, dtBeging1, dtEnd1,
+                        urlPage2, dtBeging2, dtEnd2,
+                        urlPage3, dtBeging3, dtEnd3,
+                        urlPage4, dtBeging4, dtEnd4
+                    );
+                }
+            };
+
+
+            request3.open('GET', urlPage3, true);
+            request3.onload = function () {
+                if (this.status === 404) {
+                    // not found, add some error handling
+                    dtEnd3 = dtMaxDate;
+                    return;
+                }
+            };
+            request3.onreadystatechange = function () {
+                Balancer._mirrorCheck++;
+                if (request3.readyState === 4 && request3.status === 0) {
+                    dtEnd3 = new Date($.now());
+                    Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
+                        urlPage1, dtBeging1, dtEnd1,
+                        urlPage2, dtBeging2, dtEnd2,
+                        urlPage3, dtBeging3, dtEnd3,
+                        urlPage4, dtBeging4, dtEnd4
+                    );
+                }
+            };
+
+            request4.open('GET', urlPage4, true);
+            request4.onload = function () {
+                if (this.status === 404) {
+                    // not found, add some error handling
+                    dtEnd4 = dtMaxDate;
+                    return;
+                }
+            };
+            request4.onreadystatechange = function () {
+                Balancer._mirrorCheck++;
+                if (request4.readyState === 4 && request4.status === 0) {
+                    dtEnd4 = new Date($.now());
+                    Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
+                        urlPage1, dtBeging1, dtEnd1,
+                        urlPage2, dtBeging2, dtEnd2,
+                        urlPage3, dtBeging3, dtEnd3,
+                        urlPage4, dtBeging4, dtEnd4
+                    );
+                }
+            };
+
+            dtBeging1 = new Date($.now());
+            dtBeging2 = dtBeging1;
+            dtBeging3 = dtBeging1;
+            dtBeging4 = dtBeging1;
+
+            request.send();
+            request2.send();
+            request3.send();
+            request4.send();
+        },
+
         isNull: function (o) {
             if (o == null || o == "undefined") {
                 return true;
             }
             return false;
         },
-		
-		isIeBrowser: function() 
-		{
-			var ua = window.navigator.userAgent;
-			var msie = ua.indexOf("MSIE ");
-			var edge = ua.indexOf('Edge/');
-			var new_ie = ua.indexOf('Trident/');
 
-			if (msie > -1) // If Internet Explorer, return version number
-			{
-				return true;
-				// alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
-			}
-			else if (edge> -1){
-				return true;
-			}
-			else if (new_ie> -1){
-				return true;
-			}
-			else  // If another browser, return 0
-			{
-				return false;
-				//alert('otherbrowser');
-			}
+        isIeBrowser: function () {
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+            var edge = ua.indexOf('Edge/');
+            var new_ie = ua.indexOf('Trident/');
 
-			return false;
-		},
-                     
-        redirectToFastMirror: function (counter, queryParametars, 
-									    urlPage1, dtBeging1, dtEnd1, 
-									    urlPage2, dtBeging2, dtEnd2, 
-									    urlPage3, dtBeging3, dtEnd3, 
-									    urlPage4, dtBeging4, dtEnd4) {
-            if (counter == 4 ) {
-                        
-				var currentUrlPage = "http://" + $(location).attr('hostname') + "/";  
-				
-				var difference1 = dtEnd1 - dtBeging1;
-				var difference2 = dtEnd2 - dtBeging2;
-				var difference3 = dtEnd3 - dtBeging3;
-				var difference4 = dtEnd4 - dtBeging4;
-								
-				if (difference1 <= difference2 && difference1 <= difference3 && difference1 <= difference4){	
-					if (currentUrlPage != urlPage1)
-						window.location.href = urlPage1 + queryParametars;
-				}
-				else if (difference2 <= difference1 && difference2 <= difference3 && difference2 <= difference4){				
-					if (currentUrlPage != urlPage2)
-						window.location.href = urlPage2 + queryParametars;
-				}
-				else if (difference3 <= difference1 && difference3 <= difference2 && difference3 <= difference4){				
-					if (currentUrlPage != urlPage3)
-						window.location.href = urlPage3 + queryParametars;	
-				}
-				else if (difference4 <= difference1 && difference4 <= difference2 && difference4 <= difference3){				
-					if (currentUrlPage != urlPage4)
-						window.location.href = urlPage4 + queryParametars;	
-				}					
-										
+            if (msie > -1) // If Internet Explorer, return version number
+            {
+                return true;
+                // alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
+            }
+            else if (edge > -1) {
+                return true;
+            }
+            else if (new_ie > -1) {
+                return true;
+            }
+            else  // If another browser, return 0
+            {
+                return false;
+                //alert('otherbrowser');
+            }
+
+        },
+
+        redirectToFastMirror: function (counter, queryParametars,
+            urlPage1, dtBeging1, dtEnd1,
+            urlPage2, dtBeging2, dtEnd2,
+            urlPage3, dtBeging3, dtEnd3,
+            urlPage4, dtBeging4, dtEnd4) {
+            if (counter === 4) {
+
+                var currentUrlPage = "http://" + $(location).attr('hostname') + "/";
+
+                var difference1 = dtEnd1 - dtBeging1;
+                var difference2 = dtEnd2 - dtBeging2;
+                var difference3 = dtEnd3 - dtBeging3;
+                var difference4 = dtEnd4 - dtBeging4;
+
+                if (difference1 <= difference2 && difference1 <= difference3 && difference1 <= difference4) {
+                    if (currentUrlPage !== urlPage1)
+                        window.location.href = urlPage1 + queryParametars + "#about";
+                }
+                else if (difference2 <= difference1 && difference2 <= difference3 && difference2 <= difference4) {
+                    if (currentUrlPage !== urlPage2)
+                        window.location.href = urlPage2 + queryParametars + "#about";
+                }
+                else if (difference3 <= difference1 && difference3 <= difference2 && difference3 <= difference4) {
+                    if (currentUrlPage !== urlPage3)
+                        window.location.href = urlPage3 + queryParametars + "#about";
+                }
+                else if (difference4 <= difference1 && difference4 <= difference2 && difference4 <= difference3) {
+                    if (currentUrlPage !== urlPage4)
+                        window.location.href = urlPage4 + queryParametars + "#about";
+                }
+
                 return true;
             }
             return false;
-        },
-            
+        }
+
+
+
+
     };
 
 
@@ -269,7 +269,7 @@
             if (tests.hasOwnProperty(featureIdx)) {
                 featureNames = [];
                 feature = tests[featureIdx];
-              
+
                 if (feature.name) {
                     featureNames.push(feature.name.toLowerCase());
 
@@ -288,7 +288,7 @@
                 // Set each of the names on the Balancer object
                 for (nameIdx = 0; nameIdx < featureNames.length; nameIdx++) {
                     featureName = featureNames[nameIdx];
-               
+
                     featureNameSplit = featureName.split('.');
 
                     if (featureNameSplit.length === 1) {
@@ -306,8 +306,7 @@
                 }
             }
         }
-    }
-    ;
+    };
 
     // Run each test
     /*
@@ -337,20 +336,20 @@
 (function ($) {
 
     $(window).load(function () {
-        
+
     });
 
 
-    $(document).load(function () {        
+    $(document).load(function () {
 
     });
 
     $(document).ready(function () {
-        
+
     });
 
 
-    $(window).bind("load", function () {        
+    $(window).bind("load", function () {
         // Balancer.loadBalancer();        
     });
 
