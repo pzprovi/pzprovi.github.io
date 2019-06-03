@@ -15,19 +15,27 @@ Technologies we use (UI):
  - CSS
  - Bootstrap
   
+  
+  
  Technologies we use (Server-side): 
  - WebAPI
  - C#.Net
  - Google AI Translation
  - Google Machine Learning
  
+ 
+ 
  Technologies we use (management site and assets) 
  - Sors Movie Management App 
  - GitHub 
  - Sors Load Balancer JS implemented mirrors redirect business logic
  
+ 
+ 
   Technologies we use for subtitles generation and format:
  - Subtitles format (.srt)
+ 
+ 
  
  # Servers
  - Windows IIS Hosting from Somee.com
