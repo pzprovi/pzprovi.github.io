@@ -34,6 +34,6 @@ Technologies we use (UI):
  - Apache from free.bg
  - GitHub domain and hosting
  
- # Demo
+ # Example
  http://subsdiving.somee.com/
  
