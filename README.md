@@ -34,8 +34,10 @@ Technologies we use (UI):
  - Apache from free.bg
  - GitHub domain and hosting
  
- # Example
- http://subsdiving.somee.com/
- http://pzprovi.github.io/
- http://subtitles.free.bg/
+ # Examples
+  - http://pzprovi.github.io/
+  - http://subsdiving.somee.com/
+  - http://subtitles.free.bg/
+  
+  
  
