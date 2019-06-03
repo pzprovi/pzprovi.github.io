@@ -36,4 +36,6 @@ Technologies we use (UI):
  
  # Example
  http://subsdiving.somee.com/
+ http://pzprovi.github.io/
+ http://subtitles.free.bg/
  
