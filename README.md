@@ -14,38 +14,32 @@ Technologies we use (UI):
  - Ant Design
  - CSS
  - Bootstrap
-  
-  
-  
- Technologies we use (Server-side): 
+      
+ # Technologies we use (Server-side): 
  - WebAPI
  - C#.Net
  - Google AI Translation
  - Google Machine Learning
- 
- 
- 
- Technologies we use (management site and assets) 
+  
+ # Technologies we use (management site and assets) 
  - Sors Movie Management App 
  - GitHub 
  - Sors Load Balancer JS implemented mirrors redirect business logic
- 
- 
- 
-  Technologies we use for subtitles generation and format:
+   
+ # Technologies we use for subtitles generation and format:
  - Subtitles format (.srt)
- 
- 
- 
+  
  # Servers
  - Windows IIS Hosting from Somee.com
  - Apache from free.bg
  - GitHub domain and hosting
+ 
+ # Security
+ - Highly and stricted security layer which protect back-end servers
+ - Software implementation of Firewall to protected from varius type of attacks
  
  # Examples
   - http://pzprovi.github.io/
   - http://subsdiving.somee.com/
   - http://subtitles.free.bg/
   
-  
- 
