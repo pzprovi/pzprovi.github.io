@@ -18,8 +18,8 @@ Technologies we use (UI):
  # Technologies we use (Server-side): 
  - WebAPI
  - C#.Net
- - Google AI Translation
- - Google Machine Learning
+ - AI Translation
+ - Machine Learning
   
  # Technologies we use (management site and assets) 
  - Sors Movie Management App 
