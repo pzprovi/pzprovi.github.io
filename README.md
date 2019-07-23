@@ -37,6 +37,13 @@ Technologies we use (UI):
  # Security
  - Highly strict security of each layer which protect back-end servers
  - Software implementation of Firewall to protected from various type of attacks
+ - Implementation against (DDoS) attack
+ - Implementation against (SQLi) attack
+ - Implementation against Clickjacking attack
+ - Implementation against (XSS) attack
+ - Implementation against (CSRF) attack
+ - Implementation against HTTP header injection attack
+ - Implementation against/from Proxy attack
  
  # Mirrors
   - http://pzprovi.github.io/
