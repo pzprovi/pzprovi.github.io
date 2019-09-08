@@ -226,8 +226,7 @@ HTTP://SubsDiv.Info
 
 51
 00:01:51,476 --> 00:01:55,436
-<font color = "# 0080ff">Синхронизиран и коригиран от</font>
-kinglouisxx <font color = "# 0080ff">www.</font> addic7ed <font color = "# 0080ff">. com</font>
+Subsdiv.info 
 
 52
 00:01:55,472 --> 00:01:57,430
