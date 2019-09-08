@@ -247,8 +247,7 @@ HTTP://SubsDiv.Info
 
 59
 00:01:46,899 --> 00:01:50,900
-- Синхронизиран и коригиран от <font color = "# E83286"> MementMori</font>
-- - <font color = "# 138CE9"> www.addic7ed.com</font> -
+SubsDiv.Info
 
 60
 00:01:50,903 --> 00:01:52,129
