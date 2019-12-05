@@ -1,8 +1,8 @@
-# Subtitles Diving HTTP://subsdiv.info
-Subtitles diving is web portal to seek and download bulgarian movie subtitles. Technologies we use: HTML5, JS, JQuery, React, Electron, Ant Design, WebAPI, Bootstrap, CSS, C#.Net, AI Translation, Machine Learning, Subtitles format - srt, Sors Movie Management App for some back-end things and GitHub for our files cloud and mirrors redirect business logic.
+#   Diving HTTP://subsdiv.info
+  diving is web portal to seek and download bulgarian movie  . Technologies we use: HTML5, JS, JQuery, React, Electron, Ant Design, WebAPI, Bootstrap, CSS, C#.Net, AI Translation, Machine Learning,   format - srt, Sors Movie Management App for some back-end things and GitHub for our files cloud and mirrors redirect business logic.
 
 # DESCRIPTION
-Subtitles diving is a web portal for searching and download movie subtitles.
+  diving is a web portal for searching and download movie  .
 
 # Technologies
 Technologies we use (UI): 
@@ -26,8 +26,8 @@ Technologies we use (UI):
  - GitHub 
  - Sors Load Balancer JS implemented mirrors redirect business logic
    
- # Technologies we use for subtitles generation and format:
- - Subtitles format (.srt)
+ # Technologies we use for   generation and format:
+ -   format (.srt)
   
  # Servers
  - Windows IIS Hosting from Somee.com
@@ -48,5 +48,5 @@ Technologies we use (UI):
  # Mirrors
   - http://pzprovi.github.io/
   - http://subsdiving.somee.com/
-  - http://subtitles.free.bg/
+  - http:// .free.bg/
   
