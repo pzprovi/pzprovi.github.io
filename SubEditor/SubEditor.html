@@ -22,17 +22,14 @@
     <link rel="shortcut icon" href="favicon.ico" />
 
     <style>
-    
-    body {
-  padding: 1rem;
-}
-
-		#container span {
-		    
-	  white-space: pre-wrap; 
-		  
-    text-align: left;
-		}
+        body {
+            padding: 1rem;
+        }
+        
+        #container span {
+            white-space: pre-wrap;
+            text-align: left;
+        }
     </style>
 
     <!--  
@@ -67,117 +64,52 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <script src="repeditor.js" defer></script>
 </head>
 
 <body>
     <noscript>Your browser does not support or you need to enable JavaScript!</noscript>
-<div id='container'>
-    <nav id="navbar-example2" class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Row Bar</a>
-        <ul class="nav nav-pills">
-            
-            <li class="nav-item">
-                <a class="nav-link" href="#1">1</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#2">2</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">...</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#3">3</a>
-                    <a class="dropdown-item" href="#4">4</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#5">5</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <div class="bd-example">
-        <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-            
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="1">1</span>
-                    <span class="input-group-text">00:00:03,420 --> 00:00:05,169</span>
-                    <span class="input-group-text">Priviusly in Emergency.
-There was dark night and all people are sleeping.
-					</span>
-                </div>
-                <!-- <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="В предишния епизод. Тя има човешко тяло със синтетичен ИИ(изкуствен интелект)?">
-                -->
-                 <textarea class="form-control" rows="2" placeholder="" required>
-В предишния епизод. Тя има човешко тяло със синтетичен ИИ(изкуствен интелект)?
-                </textarea>
+    <div id='container'>
+        <nav id="navbar-example2" class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">Row Bar</a>
+            <ul class="nav nav-pills">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#1">1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#2">2</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">...</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#3">3</a>
+                        <a class="dropdown-item" href="#4">4</a>
+                        <div role="separator" class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#5">5</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="bd-example">
+            <div id="repeditor" name="repeditor" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+
+               
+
             </div>
-        
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="2">2</span>
-                    <span class="input-group-text">00:00:03,420 --> 00:00:05,169</span>
-                    <span class="input-group-text">Priviusly in Emergency.
-There was dark night and all people are sleeping.
-					</span>
-                </div>
-                <textarea class="form-control" rows="2" placeholder="" required>
-В предишния епизод. 
-Тя има човешко тяло със синтетичен ИИ(изкуствен интелект)?
-                </textarea>
-            </div>
-                        
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="3">3</span>
-                    <span class="input-group-text">00:00:03,420 --> 00:00:05,169</span>
-                    <span class="input-group-text">Priviusly in Emergency.
-There was dark night and all people are sleeping.
-					</span>
-                </div>
-                <textarea class="form-control" rows="2" placeholder="" required>
-В предишния епизод. Тя има човешко тяло със синтетичен ИИ(изкуствен интелект)?
-                </textarea>
-            </div>
-            
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="4">4</span>
-                    <span class="input-group-text">00:00:03,420 --> 00:00:05,169</span>
-                    <span class="input-group-text">Priviusly in Emergency.
-There was dark night and all people are sleeping.
-					</span>
-                </div>
-                <textarea class="form-control" rows="2" placeholder="" required>
-В предишния епизод. Тя има човешко тяло със синтетичен ИИ(изкуствен интелект)?
-                </textarea>
-            </div>
-            
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="5">5</span>
-                    <span class="input-group-text">00:00:03,420 --> 00:00:05,169</span>
-                    <span class="input-group-text">Priviusly in Emergency.
-					</span>
-                </div>
-                <textarea class="form-control" rows="2" placeholder="" required>
-В предишния епизод.
-                </textarea>
-            </div>
-          
         </div>
+
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+            <div class="invalid-feedback">Example invalid custom file feedback</div>
+        </div>
+
+        <br>
+        <br>
+        <button type="button" class="btn btn-success">Save</button>
+
     </div>
-
-    <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-        <div class="invalid-feedback">Example invalid custom file feedback</div>
-    </div>
-
-    <br>
-    <br>
-    <button type="button" class="btn btn-success">Save</button>
-
-
-</div>
 
     <script type="text/javascript">
         $(document).ready(function() {
