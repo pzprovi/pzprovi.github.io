@@ -8,8 +8,8 @@
 	                           '        <span class="input-group-text">'+w1+'</span> '+
 	                           '        <span class="input-group-text">'+w2+'</span> '+
 	                           '   </div> '+
-	                           '   <textarea id="v'+id+'" name="v'+id+'" class="form-control col-4" rows="2" placeholder="" required>'+w3+'</textarea> '+
-	                           '   <textarea class="form-control col-4" rows="2" placeholder="" required>'+w4+'</textarea> '+
+	                           '   <textarea id="v'+id+'" name="v'+id+'" class="form-control col-3" rows="2" placeholder="" required>'+w3+'</textarea> '+
+	                           '   <textarea class="form-control col-2" rows="2" placeholder="" required>'+w4+'</textarea> '+
 	                           '  </div>'+
 	                           '</div>');	    	    	 
 	}
