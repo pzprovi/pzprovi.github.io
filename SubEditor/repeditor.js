@@ -1,7 +1,7 @@
 ﻿
 	function addNewRow(id, w1, w2, w3, w4, w5)
 	{					   	  
-	    $('#repeditor').append('<div class="input-group-mb-3">'+
+	    $('#repeditor').append('<div class="input-group-mb-4">'+
 	                           '   <div class="row"> '+
 	                           '     <div class="input-group-prepend col-3"> '+
 	                           '        <span class="input-group-text" id="'+id+'">'+id+'</span> '+
