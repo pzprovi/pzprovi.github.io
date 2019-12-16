@@ -1,15 +1,15 @@
 ﻿
 	function addNewRow(id, w1, w2, w3, w4, w5)
 	{					   	  
-	    $('#repeditor').append('<div class="input-group-mb-4">'+
+	    $('#repeditor').append('<div class="input-group-mb-3">'+
 	                           '   <div class="row"> '+
 	                           '     <div class="input-group-prepend col-3"> '+
 	                           '        <span class="input-group-text" id="'+id+'">'+id+'</span> '+
 	                           '        <span class="input-group-text">'+w1+'</span> '+
 	                           '        <span class="input-group-text">'+w2+'</span> '+
 	                           '     </div> '+
-	                           '     <textarea id="v'+id+'" name="v'+id+'" class="form-control col-5" rows="2" placeholder="" required>'+w3+'</textarea> '+
-	                           '     <textarea class="form-control col-2" rows="2" placeholder="" required>'+w4+'</textarea> '+
+	                           '     <textarea id="v'+id+'" name="v'+id+'" class="form-control" rows="2" placeholder="" required>'+w3+'</textarea> '+
+	                           '     <textarea class="form-control" rows="2" placeholder="" required>'+w4+'</textarea> '+
 	                           '  </div>'+
 	                           '</div>');	    	    	 
 	}
