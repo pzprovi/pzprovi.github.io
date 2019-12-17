@@ -70,43 +70,44 @@
 <body>
     <noscript>Your browser does not support or you need to enable JavaScript!</noscript>
     <div id='container'>
-        <nav id="navbar-example2" class="navbar navbar-light bg-light">
-            <!-- <a class="navbar-brand" href="#">Row Bar</a> -->
-            <input id="repTitle" name="repTitle" type="text" class="navbar-brand" placeholder="Title" aria-label="Title" aria-describedby="addon-wrapping" href="#" value="Emergency S01E01 2019" style="width:40%">
+		<form id="formTranslate" name="formTranslate" class="" method="post" action="#"> 
+			<nav id="navbar-example2" class="navbar navbar-light bg-light">
+				<!-- <a class="navbar-brand" href="#">Row Bar</a> -->
+				<input id="repTitle" name="repTitle" type="text" class="navbar-brand" placeholder="Title" aria-label="Title" aria-describedby="addon-wrapping" href="#" value="Emergency S01E01 2019" style="width:40%">
 
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link" href="#1">1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#2">2</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">...</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#3">3</a>
-                        <a class="dropdown-item" href="#4">4</a>
-                        <div role="separator" class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#5">5</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <div class="bd-example">
-            <div id="repeditor" name="repeditor" data-spy="scroll" data-target="#navbar-example2" data-offset="0">              
-            </div>
-        </div>
+				<ul class="nav nav-pills">
+					<li class="nav-item">
+						<a class="nav-link" href="#1">1</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#2">2</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">...</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#3">3</a>
+							<a class="dropdown-item" href="#4">4</a>
+							<div role="separator" class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#5">5</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div class="bd-example">
+				<div id="repeditor" name="repeditor" data-spy="scroll" data-target="#navbar-example2" data-offset="0">              
+				</div>
+			</div>
 
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-            <div class="invalid-feedback">Example invalid custom file feedback</div>
-        </div>
+			<div class="custom-file">
+				<input type="file" class="custom-file-input" id="validatedCustomFile" required>
+				<label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+				<div class="invalid-feedback">Example invalid custom file feedback</div>
+			</div>
 
-        <br>
-        <br>
-        <button type="button" class="btn btn-success">Save</button>
-
+			<br>
+			<br>
+			<button type="button" id="buttonSave" name="buttonSave" class="btn btn-success">Save</button>
+		</form>
     </div>
 
     <script type="text/javascript">
