@@ -329,7 +329,28 @@
 			saveRep();
 			
 			e.preventDefault();
-		});         
+		});   
+		
+		
+		
+		
+
+        $("#formTranslate").submit(function (e) {
+                 
+                //var value = $('[name=search]').val().toLowerCase();
+                
+                saveRep();
+              
+        });
+        
+        
+        $("#submit").on("keyup", function () {
+                //var value = $(this).val().toLowerCase();
+                
+                saveRep();
+                
+        });
+      
 
     });
 
