@@ -1,0 +1,22 @@
+
+.bd-example {
+	position: relative;    
+    margin: 1rem -15px 0;
+    border: solid #f8f9fa;   
+	padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: .2rem;    
+    box-sizing: border-box;            
+    max-height: 1000px;        
+    overflow-y: scroll;   
+}
+
+body {
+    padding: 1rem;
+}
+
+#container span {
+    white-space: pre-wrap;
+    text-align: left;
+}

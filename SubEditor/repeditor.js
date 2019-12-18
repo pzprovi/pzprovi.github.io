@@ -335,13 +335,21 @@
 		
 		
 
-        $("#formTranslate").submit(function (e) {
+        $("#formUpload").submit(function (e) {
                  
                 //var value = $('[name=search]').val().toLowerCase();
                 
                 saveRep();
               
         });
+
+        $("#formSave").submit(function (e) {
+                 
+            //var value = $('[name=search]').val().toLowerCase();
+            
+            saveRep();
+          
+    });
         
         
         $("#submit").on("keyup", function () {
