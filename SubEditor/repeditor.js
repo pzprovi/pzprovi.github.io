@@ -26,11 +26,11 @@
 			$('#repeditor').append('<div class="input-group">'+
 								   '    <div class="row"> '+
 								   '        <div class="input-group-prepend"> '+
-								   '            <span class="input-group-text" id="'+id+'">'+id+'</span> '+
-								   '            <span class="input-group-text col-sm-2">'+w1+'</span> '+
+								   '            <span class="input-group-text-col" id="'+id+'">'+id+'</span> '+
+								   '            <span class="input-group-text-col">'+w1+'</span> '+
 								   '            <span class="input-group-text">'+w2+'</span> '+	                          
-								   '      		<textarea id="v'+id+'" name="v'+id+'" class="form-control col-4" rows="2" placeholder="" required>'+w3+'</textarea> '+
-								   '   			<textarea class="form-control col-sm" rows="2" placeholder="" readonly>'+w4+'</textarea> '+
+								   '      		<textarea id="v'+id+'" name="v'+id+'" class="form-control-col-2" rows="2" placeholder="" required>'+w3+'</textarea> '+
+								   '   			<textarea class="form-control-col-sm" rows="2" placeholder="" readonly>'+w4+'</textarea> '+
 								   '  		</div>'+
 								   '	</div> '+
 								   '</div>');	    	    	 
