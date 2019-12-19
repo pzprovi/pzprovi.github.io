@@ -245,7 +245,7 @@
         uploadReps2: function (title, lang, formData) {
            
             //var repEncodeData = encodeURIComponent(rep1);            
-            var jsonData = JSON.stringify({ "title": title, "lang": lang, "content": content });
+            //var jsonData = JSON.stringify({ "title": title, "lang": lang, "content": content });
             
             $.ajax({
                 async: true,
