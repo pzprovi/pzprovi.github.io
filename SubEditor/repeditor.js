@@ -52,7 +52,7 @@
 		
 		getTitle: function()
 		{   
-			return $('#repTitle').text();		
+			return $('#repTitle').val();		
 		},
 		
 		setTitle: function(value)
@@ -194,8 +194,7 @@
 
 			});
 		},
-		
-		
+				
 		uploadReps: function (title, lang, content) {
            
             //var repEncodeData = encodeURIComponent(rep1);            
@@ -209,10 +208,64 @@
                 dataType: 'json',                
                 contentType: "application/json; charset=utf-8", // 'application/x-www-form-urlencoded', // "text/plain",
                 url: "api/DbController/UploadContent",
-                data: jsonData,              
+                data: jsonData,                                     
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json", // "application/x-www-form-urlencoded",
+                    "Cache-Control": "no-cache",
+                    "Token": token,
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "OPTIONS,GET,PUT,POST,DELETE",
+                    "Access-Control-Allow-Headers": "Content-Type, soapaction, Origin, X-Requested-With, Content-Type, Accept"
+                },
+
+                success: function (data, textStatus, jQxhr) {
+                    //RepEditor.populate(data);
+                    //RepEditor.populateOffLine();    
+                    //RepEditor.busyIndicator(false);
+                },
+                error: function (jqXhr, textStatus, errorThrown) {
+                    console.log("error message: " + textStatus);
+                    // cache
+                    //RepEditor.populateOffLine();
+                    //RepEditor.busyIndicator(false);
+                },
+                statusCode: {
+                    404: function () {
+                        console.log("page not found");
+                    },
+                    0: function () {
+                        console.log("page cross-site scripting, DNS issues, ad blocker. request was interrupted. failed due to issue on the client side");
+                    }
+                }
+
+			});
+        },
+        
+        uploadReps2: function (title, lang, formData) {
+           
+            //var repEncodeData = encodeURIComponent(rep1);            
+            var jsonData = JSON.stringify({ "title": title, "lang": lang, "content": content });
+            
+            $.ajax({
+                async: true,
+                crossDomain: true,
+                method: "POST",
+                type: "POST",
+                // dataType: 'json',                
+                // contentType: "application/json; charset=utf-8", // 'application/x-www-form-urlencoded', // "text/plain",
+                enctype: 'multipart/form-data',
+                url: "api/DbController/UploadContent",
+                // data: jsonData,       
+                cache: false,
+                data : formData,
+                processData: false,  // tell jQuery not to process the data
+                contentType: false,  // tell jQuery not to set contentType
+
+
+                headers: {
+                    //"Accept": "application/json",
+                    //"Content-Type": "application/json", // "application/x-www-form-urlencoded",
                     "Cache-Control": "no-cache",
                     "Token": token,
                     "Access-Control-Allow-Origin": "*",
@@ -316,7 +369,10 @@
     $(document).ready(function () {
 
 		$('#buttonSave').submit(function(e){
-			/*
+            
+            e.preventDefault();
+
+            /*
 			$.ajax({
 			url: $(this).attr('action'),
 			data : $(this).serialize(),
@@ -328,26 +384,33 @@
 			
 			saveRep();
 			
-			e.preventDefault();
+			
 		});   
-		
-		
-		
-		
-
+								
         $("#formUpload").submit(function (e) {
                  
-                //var value = $('[name=search]').val().toLowerCase();
-                
-                saveRep();
-              
+            e.preventDefault();
+
+            var formData = new FormData($(this)[0]);
+            // or serialize current one -> $('#yourForm').serialize())
+            // formData.serialize();
+
+            var f = $('#uploadFile')[0].files[0];            
+            formData.append("fileU", f);
+            // var value = $('[name=search]').val().toLowerCase();            
+            var title = RepEditor.getTitle(); 
+
+            // RepEditor.uploadReps(title, "eng-bg", f);
+            RepEditor.uploadReps2(title, "eng-bg", formData);                          
         });
 
         $("#formSave").submit(function (e) {
-                 
+            e.preventDefault();
+            var formData = new FormData($(this)[0]);
+     
             //var value = $('[name=search]').val().toLowerCase();
             
-            saveRep();
+            RepEditor.saveRep();
           
     });
         
