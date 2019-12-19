@@ -12,6 +12,19 @@
     overflow-y: scroll;   
 }
 
+
+.spaninline {
+  display: inline; 
+/* 
+width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;  
+  background-color: yellow; 
+*/
+  
+}
+
 body {
     padding: 1rem;
 }
