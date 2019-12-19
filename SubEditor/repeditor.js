@@ -28,10 +28,10 @@
 								   '        <div class="input-group-prepend"> '+
 								   '            <span class="input-group-text-col" id="'+id+'">'+id+'</span> '+
 								   '            <span class="input-group-text-col">'+w1+'</span> '+
-								   '            <span class="input-group-text">'+w2+'</span> '+	                          
-								   '      		<textarea id="v'+id+'" name="v'+id+'" class="form-control-col-2" rows="2" placeholder="" required>'+w3+'</textarea> '+
-								   '   			<textarea class="form-control-col-sm" rows="2" placeholder="" readonly>'+w4+'</textarea> '+
-								   '  		</div>'+
+								   '            <span class="input-group-text-col">'+w2+'</span> '+	                          
+								   '            <textarea id="v'+id+'" name="v'+id+'" class="form-control-col-4" rows="2" placeholder="" required>'+w3+'</textarea> '+
+								   '   		<textarea class="form-control-col-3" rows="2" placeholder="" readonly>'+w4+'</textarea> '+
+								   '  	    </div>'+
 								   '	</div> '+
 								   '</div>');	    	    	 
 		},
