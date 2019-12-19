@@ -149,6 +149,11 @@
             //var repEncodeData = encodeURIComponent(rep1);            
             //var jsonData: JSON.stringify({ "id": id, "offset" : offset, "lang": lang, "rep": rep1 });
             
+            /* dummy data */
+            getTranslate("");
+            RepEditor.setTitle("Emergency S231 2019");
+              /* dummy data end */
+
             $.ajax({
                 async: true,
                 crossDomain: true,
@@ -174,21 +179,22 @@
                     //RepEditor.busyIndicator(false);
                     
                     getTranslate(data);
+                    RepEditor.setTitle(data.Title);
                     
                     
                 },
                 error: function (jqXhr, textStatus, errorThrown) {
-                    console.log("error message: " + textStatus);
+                    console.log("error message: " + textStatus);                  
                     // cache
                     //RepEditor.populateOffLine();
                     //RepEditor.busyIndicator(false);
                 },
                 statusCode: {
                     404: function () {
-                        console.log("page not found");
+                        console.log("page not found");                       
                     },
                     0: function () {
-                        console.log("page cross-site scripting, DNS issues, ad blocker. request was interrupted. failed due to issue on the client side");
+                        console.log("page cross-site scripting, DNS issues, ad blocker. request was interrupted. failed due to issue on the client side");                        
                     }
                 }
 
