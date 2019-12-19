@@ -30,7 +30,7 @@
 								   '            <span class="input-group-text col-sm-2">'+w1+'</span> '+
 								   '            <span class="input-group-text">'+w2+'</span> '+	                          
 								   '      		<textarea id="v'+id+'" name="v'+id+'" class="form-control col-5" rows="2" placeholder="" required>'+w3+'</textarea> '+
-								   '   			<textarea class="form-control" rows="2" placeholder="" required>'+w4+'</textarea> '+
+								   '   			<textarea class="form-control" rows="2" placeholder="" readonly>'+w4+'</textarea> '+
 								   '  		</div>'+
 								   '	</div> '+
 								   '</div>');	    	    	 
@@ -350,8 +350,12 @@
 	    var w3 = 'В предишния епизод. Тя има човешко тяло със синтетичен ИИ(изкуствен интелект)?';
 	    var w4 = 'В предишния епизод. Тя има човешко тяло със синтетичен ИИ?';
 	    var w5 = '';	
-		RepEditor.addNewRow(id, w1, w2, w3, w4, w5);
-    
+        RepEditor.addNewRow(id, w1, w2, w3, w4, w5);
+        
+        RepEditor.addNewRow(2, w1, w2, w3, w4, w5);
+        RepEditor.addNewRow(3, w1, w2, w3, w4, w5);
+        RepEditor.addNewRow(4, w1, w2, w3, w4, w5);
+        RepEditor.addNewRow(5, w1, w2, w3, w4, w5);
     }
  
     // Leak RepEditor namespace
