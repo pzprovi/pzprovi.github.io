@@ -26,7 +26,7 @@
 			$('#repeditor').append('<div class="input-group">'+
 								   '    <div class="row"> '+
 								   '        <div class="input-group-prepend"> '+
-								   '            <span class="input-group-text col-1" id="'+id+'">'+id+'</span> '+
+								   '            <span class="input-group-text col-0" id="'+id+'">'+id+'</span> '+
 								   '            <span class="input-group-text col-2">'+w1+'</span> '+
 								   '            <span class="input-group-text col-3">'+w2+'</span> '+	                          
 								   '            <textarea id="v'+id+'" name="v'+id+'" class="form-control col-4" rows="2" placeholder="" required>'+w3+'</textarea> '+
