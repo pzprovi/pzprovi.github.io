@@ -29,8 +29,8 @@
 								   '            <span class="input-group-text col-0" id="'+id+'">'+id+'</span> '+
 								   '            <span class="input-group-text col-2">'+w1+'</span> '+
 								   '            <span class="input-group-text col-3">'+w2+'</span> '+	                          
-								   '            <textarea id="v'+id+'" name="v'+id+'" class="form-control col" rows="2" placeholder="" required>'+w3+'</textarea> '+
-								   '   		<textarea class="form-control col-2" rows="2" placeholder="" readonly>'+w4+'</textarea> '+
+								   '            <textarea id="h'+id+'" name="h'+id+'" class="form-control col" rows="2" placeholder="" required>'+w3+'</textarea> '+
+								   '   		    <textarea id="m'+id+'" name="m'+id+'" class="form-control col-2" rows="2" placeholder="" readonly>'+w4+'</textarea> '+
 								   '  	    </div>'+
 								   '	</div> '+
 								   '</div>');	    	    	 
@@ -45,9 +45,19 @@
 			RepEditor.setTitle("");
 		},
 				
-		save: function(id)
+		saveRep: function(id)
 		{   
-			return $('#v'+id+'').text();		
+			return $('#h'+id+'').text();		
+        },
+        
+        getRepH: function(id)
+		{   
+			return $('#h'+id+'').val();		
+        },
+        
+        getRepM: function(id)
+		{   
+			return $('#m'+id+'').val();		
 		},
 		
 		getTitle: function()
@@ -58,7 +68,11 @@
 		setTitle: function(value)
 		{   
 			$('#repTitle').val(value);
-		},
+        },
+        
+        readOnlyTitle: function(readonly = true){            
+            $('#repTitle').prop('readonly', readonly);
+        },
 				
         isNull: function (o) {
             if (o == null || o == "undefined") {
@@ -73,10 +87,41 @@
 		},
 
 
+        /* {
+                "Title":"my title", "Token":"{3423-23233-233-2323}", "Lang":"eng-bg",
+                "RepList": [{"repH":"xxxx", "repM":"xxxx"},
+                            {"repH":"ffff", "repM":"ffff"}
+                           ]
+           } */
 		saveRep: function()
-		{   
-			
-			// return $('#v'+id+'').text();		
+		{   	
+            
+            var title = "my title";
+            var token = "{3423-23233-233-2323}";
+            var langType = "eng-bg";
+            var rep = {
+                Title: title,
+                Token: token,
+                Lang: langType,
+                RepList:[]
+            };
+                                 	            
+            var i;
+            for (i = 1; i < 6; i++) 
+            {
+                var repH_ = RepEditor.getRepH(i);
+                var repM_ = RepEditor.getRepM(i);
+                
+                if (repH_ !== repM_)
+                {
+                   var translationObject = { repH: repH_ ,repM: repM_ };                   
+                   rep.RepList.push( translationObject  );
+                }                
+            }
+                                                                                 
+            var jsonText = JSON.stringify(rep);       
+            
+            RepEditor.translateReps("{2323-3223-3223-232323}", jsonData);            
 		},
 
         // get queryParams from url
@@ -98,7 +143,7 @@
         // token = 78b8f6dd-3e99-47c0-ba7a-6d87b7e87500
         translateRep: function (id, offset, rep1, lang, token) {
            
-            var repEncodeData = encodeURIComponent(rep1);            
+            // var repEncodeData = encodeURIComponent(rep1);            
             var jsonData = JSON.stringify({ "id": id, "offset" : offset, "lang": lang, "rep": rep1 });
             
             $.ajax({
@@ -109,6 +154,53 @@
                 dataType: 'json',                
                 contentType: "application/json; charset=utf-8", // 'application/x-www-form-urlencoded', // "text/plain",
                 url: "api/DbController/Translate?id=" + id,
+                data: jsonData,              
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json", // "application/x-www-form-urlencoded",
+                    "Cache-Control": "no-cache",
+                    "Token": token,
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "OPTIONS,GET,PUT,POST,DELETE",
+                    "Access-Control-Allow-Headers": "Content-Type, soapaction, Origin, X-Requested-With, Content-Type, Accept"
+                },
+
+                success: function (data, textStatus, jQxhr) {
+                    //RepEditor.populate(data);
+                    //RepEditor.populateOffLine();    
+                    //RepEditor.busyIndicator(false);
+                },
+                error: function (jqXhr, textStatus, errorThrown) {
+                    console.log("error message: " + textStatus);
+                    // cache
+                    //RepEditor.populateOffLine();
+                    //RepEditor.busyIndicator(false);
+                },
+                statusCode: {
+                    404: function () {
+                        console.log("page not found");
+                    },
+                    0: function () {
+                        console.log("page cross-site scripting, DNS issues, ad blocker. request was interrupted. failed due to issue on the client side");
+                    }
+                }
+
+			});
+        },
+        
+        translateReps: function (token, jsonData) {
+           
+            // var repEncodeData = encodeURIComponent(rep1);            
+            // var jsonData = JSON.stringify({ "id": id, "offset" : offset, "lang": lang, "rep": rep1 });
+            
+            $.ajax({
+                async: true,
+                crossDomain: true,
+                method: "POST",
+                type: "POST",
+                dataType: 'json',                
+                contentType: "application/json; charset=utf-8", // 'application/x-www-form-urlencoded', // "text/plain",
+                url: "api/DbController/Translates",
                 data: jsonData,              
                 headers: {
                     "Accept": "application/json",
@@ -352,9 +444,9 @@
 		
 	    var id = 1;
 	    var w1 = '00:00:03,420 --> 00:00:05,169';
-	    var w2 = 'Priviusly in Emergency. There was dark night and all people are sleeping.';
-	    var w3 = 'В предишния епизод. Тя има човешко тяло със синтетичен ИИ(изкуствен интелект)?';
-	    var w4 = 'В предишния епизод. Тя има човешко тяло със синтетичен ИИ?';
+	    var w2 = 'Priviusly in Emergency.';
+	    var w3 = 'В предишния епизод.';
+	    var w4 = 'В предишния епизод.';
 	    var w5 = '';	
         RepEditor.addNewRow(id, w1, w2, w3, w4, w5);
         
@@ -423,16 +515,12 @@
             RepEditor.saveRep();
           
     });
-        
-        
-        $("#submit").on("keyup", function () {
-                //var value = $(this).val().toLowerCase();
                 
-                saveRep();
-                
-        });
+        // $("#submit").on("keyup", function () {
+                // var value = $(this).val().toLowerCase();                
+                // saveRep();                
+        // });
       
-
     });
 
     $(window).bind("load", function () {
@@ -441,7 +529,8 @@
 	 
 		var token = RepEditor.getParameterByName('token');
 		if (!RepEditor.isNull(token)){							
-			RepEditor.loadReps(token)
+            RepEditor.loadReps(token);
+            RepEditor.readOnlyTitle();
 		}
                  
 					
