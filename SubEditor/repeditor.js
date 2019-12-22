@@ -528,10 +528,20 @@
 		RepEditor.clear();	
 	 
 		var token = RepEditor.getParameterByName('token');
-		if (!RepEditor.isNull(token)){							
-            RepEditor.loadReps(token);
-            RepEditor.readOnlyTitle();
+		if (!RepEditor.isNull(token)){	
+					  		
+	            $("#uploadFile").css("visibility","hidden");  
+		    $("#uploadButton").css("visibility","hidden");
+						
+                    RepEditor.loadReps(token);
+                    RepEditor.readOnlyTitle();
 		}
+	        else
+		{		
+		    $("#uploadFile").css("visibility","visible");  //style.visibility = "hidden";
+		    $("#uploadButton").css("visibility","visible"); //.style.visibility = "hidden";
+		}
+			
                  
 					
                  
