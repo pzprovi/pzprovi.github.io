@@ -532,14 +532,17 @@
 					  		
 	            $("#uploadFile").css("visibility","hidden");  
 		    $("#uploadButton").css("visibility","hidden");
+		    $("#labelUploadFile").css("visibility","hidden");
+			
 						
                     RepEditor.loadReps(token);
                     RepEditor.readOnlyTitle();
 		}
 	        else
 		{		
-		    $("#uploadFile").css("visibility","visible");  //style.visibility = "hidden";
-		    $("#uploadButton").css("visibility","visible"); //.style.visibility = "hidden";
+		    $("#uploadFile").css("visibility","visible");   
+		    $("#uploadButton").css("visibility","visible");  
+		    $("#labelUploadFile").css("visibility","visible");
 		}
 			
                  
