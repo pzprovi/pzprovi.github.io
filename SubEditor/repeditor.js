@@ -70,8 +70,8 @@
 			$('#repTitle').val(value);
         },
         
-        readOnlyTitle: function(readonly = true){            
-            $('#repTitle').prop('readonly', readonly);
+        readOnlyTitle: function(isReadonly = true){            
+            $('#repTitle').prop('readonly', isReadonly);
         },
 				
         isNull: function (o) {
@@ -528,23 +528,28 @@
 		RepEditor.clear();	
 	 
 		var token = RepEditor.getParameterByName('token');
-		if (!RepEditor.isNull(token))
+		if (RepEditor.isNull(token))
 		{	
-					  		
-	            $("#uploadFile").css("visibility","hidden");  
+
+			$("#uploadFile").css("visibility","visible");   
+		    $("#uploadButton").css("visibility","visible");  
+		    $("#labelUploadFile").css("visibility","visible");
+            $("#buttonSave").css("visibility","hidden");
+            RepEditor.readOnlyTitle(false);
+	      
+		}
+	    else
+		{		
+		                
+            $("#uploadFile").css("visibility","hidden");  
 		    $("#uploadButton").css("visibility","hidden");
 		    $("#labelUploadFile").css("visibility","hidden");
 		    $("#buttonSave").css("visibility","visible");	
-									
-                    RepEditor.loadReps(token);
-                    RepEditor.readOnlyTitle();
-		}
-	        else
-		{		
-		    $("#uploadFile").css("visibility","visible");   
-		    $("#uploadButton").css("visibility","visible");  
-		    $("#labelUploadFile").css("visibility","visible");
-	            $("#buttonSave").css("visibility","hidden");	
+            RepEditor.readOnlyTitle();
+            						
+            RepEditor.loadReps(token);
+           
+
 		}
 			
                  
