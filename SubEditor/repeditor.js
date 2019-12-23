@@ -22,58 +22,53 @@
         _delay: 40,
         _mirrorCheck: 0,
 
-		addNewRow: function(id, w1, w2, w3, w4, w5){					   	  
-			$('#repeditor').append('<div class="input-group">'+
-								   '    <div class="row"> '+
-								   '        <div class="input-group-prepend"> '+
-								   '            <span class="input-group-text col-0" id="'+id+'">'+id+'</span> '+
-								   '            <span class="input-group-text col-2">'+w1+'</span> '+
-								   '            <span class="input-group-text col-3">'+w2+'</span> '+	                          
-								   '            <textarea id="h'+id+'" name="h'+id+'" class="form-control col" rows="2" placeholder="" required>'+w3+'</textarea> '+
-								   '   		    <textarea id="m'+id+'" name="m'+id+'" class="form-control col-2" rows="2" placeholder="" readonly>'+w4+'</textarea> '+
-								   '  	    </div>'+
-								   '	</div> '+
-								   '</div>');	    	    	 
-		},
+        addNewRow: function (id, w1, w2, w3, w4, w5) {
+            $('#repeditor').append('<div class="input-group">' +
+                '    <div class="row"> ' +
+                '        <div class="input-group-prepend"> ' +
+                '            <span class="input-group-text col-0" id="' + id + '">' + id + '</span> ' +
+                '            <span class="input-group-text col-2">' + w1 + '</span> ' +
+                '            <span class="input-group-text col-3">' + w2 + '</span> ' +
+                '            <textarea id="h' + id + '" name="h' + id + '" class="form-control col" rows="2" placeholder="" required>' + w3 + '</textarea> ' +
+                '   		    <textarea id="m' + id + '" name="m' + id + '" class="form-control col-2" rows="2" placeholder="" readonly>' + w4 + '</textarea> ' +
+                '  	    </div>' +
+                '	</div> ' +
+                '</div>');
+        },
 
-		load: function(){
-		
-		},
+        load: function () {
 
-		clear: function(){	
-			$( "#repeditor" ).empty();
-			RepEditor.setTitle("");
-		},
-				
-		saveRep: function(id)
-		{   
-			return $('#h'+id+'').text();		
         },
-        
-        getRepH: function(id)
-		{   
-			return $('#h'+id+'').val();		
+
+        clear: function () {
+            $("#repeditor").empty();
+            RepEditor.setTitle("");
         },
-        
-        getRepM: function(id)
-		{   
-			return $('#m'+id+'').val();		
-		},
-		
-		getTitle: function()
-		{   
-			return $('#repTitle').val();		
-		},
-		
-		setTitle: function(value)
-		{   
-			$('#repTitle').val(value);
+
+        getRepHt: function (id) {
+            return $('#h' + id + '').text();
         },
-        
-        readOnlyTitle: function(isReadonly = true){            
+
+        getRepH: function (id) {
+            return $('#h' + id + '').val();
+        },
+
+        getRepM: function (id) {
+            return $('#m' + id + '').val();
+        },
+
+        getTitle: function () {
+            return $('#repTitle').val();
+        },
+
+        setTitle: function (value) {
+            $('#repTitle').val(value);
+        },
+
+        readOnlyTitle: function (isReadonly = true) {
             $('#repTitle').prop('readonly', isReadonly);
         },
-				
+
         isNull: function (o) {
             if (o == null || o == "undefined") {
                 return true;
@@ -81,10 +76,9 @@
             return false;
         },
 
-		populate: function(data)
-		{   
-			 
-		},
+        populate: function (data) {
+
+        },
 
 
         /* {
@@ -93,9 +87,8 @@
                             {"repH":"ffff", "repM":"ffff"}
                            ]
            } */
-		saveRep: function()
-		{   	
-            
+        saveRep: function () {
+
             var title = "my title";
             var token = "{3423-23233-233-2323}";
             var langType = "eng-bg";
@@ -103,30 +96,28 @@
                 Title: title,
                 Token: token,
                 Lang: langType,
-                RepList:[]
+                RepList: []
             };
-                                 	            
+
             var i;
-            for (i = 1; i < 6; i++) 
-            {
+            for (i = 1; i < 6; i++) {
                 var repH_ = RepEditor.getRepH(i);
                 var repM_ = RepEditor.getRepM(i);
-                
-                if (repH_ !== repM_)
-                {
-                   var translationObject = { repH: repH_ ,repM: repM_ };                   
-                   rep.RepList.push( translationObject  );
-                }                
+
+                if (repH_ !== repM_) {
+                    var translationObject = { repH: repH_, repM: repM_ };
+                    rep.RepList.push(translationObject);
+                }
             }
-                                                                                 
-            var jsonText = JSON.stringify(rep);       
-            
-            RepEditor.translateReps("{2323-3223-3223-232323}", jsonData);            
-		},
+
+            var jsonText = JSON.stringify(rep);
+
+            RepEditor.translateReps("{2323-3223-3223-232323}", jsonData);
+        },
 
         // get queryParams from url
         // var searchText = getParameterByName('search');
-        getParameterByName: function(name, url) {
+        getParameterByName: function (name, url) {
             if (!url)
                 url = window.location.href;
             name = name.replace(/[\[\]]/g, '\\$&');
@@ -138,23 +129,23 @@
                 return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         },
-        
+
         // translate(1, "00:00:03,420 --> 00:00:05,169", "Text here", "eng-bg")
         // token = 78b8f6dd-3e99-47c0-ba7a-6d87b7e87500
         translateRep: function (id, offset, rep1, lang, token) {
-           
+
             // var repEncodeData = encodeURIComponent(rep1);            
-            var jsonData = JSON.stringify({ "id": id, "offset" : offset, "lang": lang, "rep": rep1 });
-            
+            var jsonData = JSON.stringify({ "id": id, "offset": offset, "lang": lang, "rep": rep1 });
+
             $.ajax({
                 async: true,
                 crossDomain: true,
                 method: "POST",
                 type: "POST",
-                dataType: 'json',                
+                dataType: 'json',
                 contentType: "application/json; charset=utf-8", // 'application/x-www-form-urlencoded', // "text/plain",
                 url: "api/DbController/Translate?id=" + id,
-                data: jsonData,              
+                data: jsonData,
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json", // "application/x-www-form-urlencoded",
@@ -185,23 +176,23 @@
                     }
                 }
 
-			});
+            });
         },
-        
+
         translateReps: function (token, jsonData) {
-           
+
             // var repEncodeData = encodeURIComponent(rep1);            
             // var jsonData = JSON.stringify({ "id": id, "offset" : offset, "lang": lang, "rep": rep1 });
-            
+
             $.ajax({
                 async: true,
                 crossDomain: true,
                 method: "POST",
                 type: "POST",
-                dataType: 'json',                
+                dataType: 'json',
                 contentType: "application/json; charset=utf-8", // 'application/x-www-form-urlencoded', // "text/plain",
                 url: "api/DbController/Translates",
-                data: jsonData,              
+                data: jsonData,
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json", // "application/x-www-form-urlencoded",
@@ -232,26 +223,26 @@
                     }
                 }
 
-			});
-		},
-		
-		     
-		loadReps: function (token) {
-           
+            });
+        },
+
+
+        loadReps: function (token) {
+
             //var repEncodeData = encodeURIComponent(rep1);            
             //var jsonData: JSON.stringify({ "id": id, "offset" : offset, "lang": lang, "rep": rep1 });
-            
+
             /* dummy data */
             getTranslate("");
             RepEditor.setTitle("Emergency S231 2019");
-              /* dummy data end */
+            /* dummy data end */
 
             $.ajax({
                 async: true,
                 crossDomain: true,
                 method: "POST",
                 type: "POST",
-                dataType: 'json',                
+                dataType: 'json',
                 contentType: "application/json; charset=utf-8", // 'application/x-www-form-urlencoded', // "text/plain",
                 url: "api/DbController/LoadContent?token=" + token,
                 // data: jsonData,              
@@ -269,44 +260,44 @@
                     //RepEditor.populate(data);
                     //RepEditor.populateOffLine();    
                     //RepEditor.busyIndicator(false);
-                    
+
                     getTranslate(data);
                     RepEditor.setTitle(data.Title);
-                    
-                    
+
+
                 },
                 error: function (jqXhr, textStatus, errorThrown) {
-                    console.log("error message: " + textStatus);                  
+                    console.log("error message: " + textStatus);
                     // cache
                     //RepEditor.populateOffLine();
                     //RepEditor.busyIndicator(false);
                 },
                 statusCode: {
                     404: function () {
-                        console.log("page not found");                       
+                        console.log("page not found");
                     },
                     0: function () {
-                        console.log("page cross-site scripting, DNS issues, ad blocker. request was interrupted. failed due to issue on the client side");                        
+                        console.log("page cross-site scripting, DNS issues, ad blocker. request was interrupted. failed due to issue on the client side");
                     }
                 }
 
-			});
-		},
-				
-		uploadReps: function (title, lang, content) {
-           
+            });
+        },
+
+        uploadReps: function (title, lang, content) {
+
             //var repEncodeData = encodeURIComponent(rep1);            
             var jsonData = JSON.stringify({ "title": title, "lang": lang, "content": content });
-            
+
             $.ajax({
                 async: true,
                 crossDomain: true,
                 method: "POST",
                 type: "POST",
-                dataType: 'json',                
+                dataType: 'json',
                 contentType: "application/json; charset=utf-8", // 'application/x-www-form-urlencoded', // "text/plain",
                 url: "api/DbController/UploadContent",
-                data: jsonData,                                     
+                data: jsonData,
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json", // "application/x-www-form-urlencoded",
@@ -337,14 +328,14 @@
                     }
                 }
 
-			});
+            });
         },
-        
+
         uploadReps2: function (title, lang, formData) {
-           
+
             //var repEncodeData = encodeURIComponent(rep1);            
             //var jsonData = JSON.stringify({ "title": title, "lang": lang, "content": content });
-            
+
             $.ajax({
                 async: true,
                 crossDomain: true,
@@ -356,7 +347,7 @@
                 url: "api/DbController/UploadContent",
                 // data: jsonData,       
                 cache: false,
-                data : formData,
+                data: formData,
                 processData: false,  // tell jQuery not to process the data
                 contentType: false,  // tell jQuery not to set contentType
 
@@ -391,11 +382,11 @@
                     }
                 }
 
-			});
-		}
-		
-		
-	};
+            });
+        }
+
+
+    };
 
 
 
@@ -434,28 +425,28 @@
 
     function testRunner() {
         var featureNames;
-     
+
     };
-    
-    
-    function getTranslate(data){
-		
-		RepEditor.clear();		
-		
-	    var id = 1;
-	    var w1 = '00:00:03,420 --> 00:00:05,169';
-	    var w2 = 'Priviusly in Emergency.';
-	    var w3 = 'В предишния епизод.';
-	    var w4 = 'В предишния епизод.';
-	    var w5 = '';	
+
+
+    function getTranslate(data) {
+
+        RepEditor.clear();
+
+        var id = 1;
+        var w1 = '00:00:03,420 --> 00:00:05,169';
+        var w2 = 'Priviusly in Emergency.';
+        var w3 = 'В предишния епизод.';
+        var w4 = 'В предишния епизод.';
+        var w5 = '';
         RepEditor.addNewRow(id, w1, w2, w3, w4, w5);
-        
+
         RepEditor.addNewRow(2, w1, w2, w3, w4, w5);
         RepEditor.addNewRow(3, w1, w2, w3, w4, w5);
         RepEditor.addNewRow(4, w1, w2, w3, w4, w5);
         RepEditor.addNewRow(5, w1, w2, w3, w4, w5);
     }
- 
+
     // Leak RepEditor namespace
     window.RepEditor = RepEditor;
 
@@ -470,8 +461,8 @@
 
     $(document).ready(function () {
 
-		$('#buttonSave').submit(function(e){
-            
+        $('#buttonSave').submit(function (e) {
+
             e.preventDefault();
 
             /*
@@ -483,95 +474,93 @@
 				}
 			});
 			*/
-			
-			saveRep();
-			
-			
-		});   
-								
+
+            saveRep();
+
+
+        });
+
         $("#formUpload").submit(function (e) {
-                 
+
             e.preventDefault();
 
             var formData = new FormData($(this)[0]);
             // or serialize current one -> $('#yourForm').serialize())
             // formData.serialize();
 
-            var f = $('#uploadFile')[0].files[0];            
+            var f = $('#uploadFile')[0].files[0];
             formData.append("fileU", f);
             // var value = $('[name=search]').val().toLowerCase();            
-            var title = RepEditor.getTitle(); 
+            var title = RepEditor.getTitle();
 
             // RepEditor.uploadReps(title, "eng-bg", f);
-            RepEditor.uploadReps2(title, "eng-bg", formData);                          
+            RepEditor.uploadReps2(title, "eng-bg", formData);
         });
 
         $("#formSave").submit(function (e) {
             e.preventDefault();
             var formData = new FormData($(this)[0]);
-     
+
             //var value = $('[name=search]').val().toLowerCase();
-            
+
             RepEditor.saveRep();
-          
-    });
-                
+
+        });
+
         // $("#submit").on("keyup", function () {
-                // var value = $(this).val().toLowerCase();                
-                // saveRep();                
+        // var value = $(this).val().toLowerCase();                
+        // saveRep();                
         // });
-      
+
     });
 
     $(window).bind("load", function () {
-		
-		RepEditor.clear();	
-	 
-		var token = RepEditor.getParameterByName('token');
-		if (RepEditor.isNull(token))
-		{	
 
-			$("#uploadFile").css("visibility","visible");   
-		    $("#uploadButton").css("visibility","visible");  
-		    $("#labelUploadFile").css("visibility","visible");
-            $("#buttonSave").css("visibility","hidden");
+        RepEditor.clear();
+
+        var token = RepEditor.getParameterByName('token');
+        if (RepEditor.isNull(token)) {
+
+            $("#uploadFile").css("visibility", "visible");
+            $("#uploadButton").css("visibility", "visible");
+            $("#labelUploadFile").css("visibility", "visible");
+            $("#buttonSave").css("visibility", "hidden");
             RepEditor.readOnlyTitle(false);
-	      
-		}
-	    else
-		{		
-		                
-            $("#uploadFile").css("visibility","hidden");  
-		    $("#uploadButton").css("visibility","hidden");
-		    $("#labelUploadFile").css("visibility","hidden");
-		    $("#buttonSave").css("visibility","visible");	
-            RepEditor.readOnlyTitle();
-            						
-            RepEditor.loadReps(token);
-           
 
-		}
-			
-                 
-					
-                 
-	
-       
-        
+        }
+        else {
+
+            $("#uploadFile").css("visibility", "hidden");
+            $("#uploadButton").css("visibility", "hidden");
+            $("#labelUploadFile").css("visibility", "hidden");
+            $("#buttonSave").css("visibility", "visible");
+            RepEditor.readOnlyTitle();
+
+            RepEditor.loadReps(token);
+
+
+        }
+
+
+
+
+
+
+
         // RepEditor.translate()
-        
-		// RepEditor.clear();		
-		
-	    // var id = 1;
-	    // var w1 = '00:00:03,420 --> 00:00:05,169';
-	    // var w2 = 'Priviusly in Emergency. There was dark night and all people are sleeping.';
-	    // var w3 = 'В предишния епизод. Тя има човешко тяло със синтетичен ИИ(изкуствен интелект)?';
-	    // var w4 = 'В предишния епизод. Тя има човешко тяло със синтетичен ИИ?';
-	    // var w5 = '';	
-		// RepEditor.addNewRow(id, w1, w2, w3, w4, w5);
-		
-		// var rr = RepEditor.save(id);
-                 
+
+        // RepEditor.clear();		
+
+        // var id = 1;
+        // var w1 = '00:00:03,420 --> 00:00:05,169';
+        // var w2 = 'Priviusly in Emergency. There was dark night and all people are sleeping.';
+        // var w3 = 'В предишния епизод. Тя има човешко тяло със синтетичен ИИ(изкуствен интелект)?';
+        // var w4 = 'В предишния епизод. Тя има човешко тяло със синтетичен ИИ?';
+        // var w5 = '';	
+        // RepEditor.addNewRow(id, w1, w2, w3, w4, w5);
+
+        // var rr = RepEditor.save(id);
+
     });
 
 })($);
