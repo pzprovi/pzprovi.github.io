@@ -1373,7 +1373,8 @@
         });
 
         function filter() {
-            var searchText = getParameterByName('search');
+			var searchText = "";
+            searchText = getParameterByName('search');
             if (searchText == null)
                 searchText = "";
 
