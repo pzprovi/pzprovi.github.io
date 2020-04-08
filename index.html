@@ -1386,7 +1386,7 @@
 		//	}
 
             $("#search").val(searchText);
-            searchText = searchText.toLowerCase();
+            searchText = searchText.toString().toLowerCase();
 
             $("#searchTable a").filter(function() {
                 $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1);
