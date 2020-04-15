@@ -48,5 +48,5 @@ Technologies we use (UI):
  # Mirrors
   - http://pzprovi.github.io/
   - http://subsdiving.somee.com/
-  - http:// .free.bg/
+  - http://subtitles.free.bg/
   
