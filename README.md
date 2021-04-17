@@ -1,6 +1,5 @@
 #   Diving HTTP://subsdiv.info
   diving is web portal to seek and download bulgarian movie  . Technologies we use: HTML5, JS, JQuery, React, Electron, Ant Design, WebAPI, Bootstrap, CSS, C#.Net, AI Translation, Machine Learning,   format - srt, Sors Movie Management App for some back-end things and GitHub for our files cloud and mirrors redirect business logic.
-
 # DESCRIPTION
   diving is a web portal for searching and download movie  .
 
