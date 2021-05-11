@@ -24,6 +24,7 @@ Technologies we use (UI):
  - Sors Movie Management App 
  - GitHub 
  - Sors Load Balancer JS implemented mirrors redirect business logic
+ - Sors Cache JS implementation
    
  # Technologies we use for   generation and format:
  -   format (.srt)
