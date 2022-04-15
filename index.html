@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 <head>
-    <meta http-equiv="refresh" content="0; url=http://subsdiving.somee.com/?top=pzprovigithubio">	
+   
     <title>AI Diving</title>   
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -1057,6 +1057,12 @@
     <!-- menu -->
     <script>
         $(document).ready(function() {
+		
+            var searchText = getParameterByName('search');
+            if (searchText == null)
+                searchText = "";  
+            Balancer.loadBalancer(searchText); 					
+		
             $('.mobile-nav-button').on('click', function() {
                 $(".mobile-nav-button .mobile-nav-button__line:nth-of-type(1)").toggleClass("mobile-nav-button__line--1");
                 $(".mobile-nav-button .mobile-nav-button__line:nth-of-type(2)").toggleClass("mobile-nav-button__line--2");
@@ -1282,7 +1288,7 @@
     <!-- //here ends scrolling icon -->
 
     <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-    <!-- <script type="text/javascript" src="js/sorsLoadBalancer.js"></script> -->
+    <script type="text/javascript" src="js/sorsLoadBalancer.js"></script>
 
 </body>
 
