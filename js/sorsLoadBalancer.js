@@ -45,7 +45,7 @@
             var request3 = new XMLHttpRequest();
             var request4 = new XMLHttpRequest();
             
-            window.location.href = urlPage1 + queryParametars;
+            window.location.href = urlPage1 + '?search=' + queryParametars;
             return;
             
             if (Balancer.isIeBrowser()) {
