@@ -35,7 +35,7 @@
             var dtEnd4;
             var dtMaxDate = new Date(8640000000000000);
 
-            var urlPage1 = "https://subsdiving.somee.com/";
+            var urlPage1 = "https://aisub.bsite.net/";
             var urlPage2 = "http://subtitles.free.bg/";
             var urlPage3 = "http://subsdiving3.somee.com/";
             var urlPage4 = "http://pzprovi.github.io/";
