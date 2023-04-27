@@ -56,6 +56,13 @@
             }
 
             request.open('GET', urlPage1, true);
+            request.onerror = function () {
+               Balancer._mirrorCheck++;
+                 Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
+                        urlPage1, dtBeging1, dtEnd1,
+                        urlPage2, dtBeging2, dtEnd2                    
+                    );
+            };            
             request.onload = function () {
                
                 if (this.status === 404) {
@@ -81,6 +88,13 @@
             };
 
             request2.open('GET', urlPage2, true);
+            request2.onerror = function () {
+               Balancer._mirrorCheck++;
+                 Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
+                        urlPage1, dtBeging1, dtEnd1,
+                        urlPage2, dtBeging2, dtEnd2                    
+                    );
+            };  
             request2.onload = function () {
                 
                 if (this.status === 404) {
