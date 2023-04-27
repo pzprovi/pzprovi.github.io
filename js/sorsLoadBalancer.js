@@ -222,7 +222,9 @@
              //   var difference4 = dtEnd4 - dtBeging4;
                 
                 
-                
+                if (queryParametars != "") {
+                    queryParametars = "?search=" + queryParametars;
+                }
                 
 
                 if ( !isNaN(difference1) && difference1 <= difference2) {
