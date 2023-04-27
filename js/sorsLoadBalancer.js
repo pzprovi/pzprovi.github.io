@@ -57,9 +57,11 @@
 
             request.open('GET', urlPage1, true);
             request.onload = function () {
+               
                 if (this.status === 404) {
                     // not found, add some error handling
                     dtEnd1 = dtMaxDate;
+                    Balancer._mirrorCheck++;
                     return;
                 }
             };
@@ -80,9 +82,12 @@
 
             request2.open('GET', urlPage2, true);
             request2.onload = function () {
+                
                 if (this.status === 404) {
                     // not found, add some error handling
                     dtEnd2 = dtMaxDate;
+                    
+                    Balancer._mirrorCheck++;
                     return;
                 }
             };
@@ -193,7 +198,7 @@
            // urlPage3, dtBeging3, dtEnd3,
           //  urlPage4, dtBeging4, dtEnd4
          ) {
-            if (counter === 2) {
+            if (counter >= 2) {
 
                 var currentUrlPage = "http://" + $(location).attr('hostname') + "/";
 
