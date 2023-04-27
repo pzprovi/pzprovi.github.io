@@ -225,19 +225,19 @@
                 
                 
 
-                if ( difference1 != NaN && difference1 <= difference2) {
+                if ( !isNaN(difference1) && difference1 <= difference2) {
                     if (currentUrlPage !== urlPage1)
                         window.location.href = urlPage1 + queryParametars + "#about";
                 }
-                else if ( difference2 != NaN && difference2 <= difference1 ) {
+                else if ( !isNaN(difference2) && difference2 <= difference1 ) {
                     if (currentUrlPage !== urlPage2)
                         window.location.href = urlPage2 + queryParametars + "#about";
                 }
-                else if(difference1 != NaN){
+                else if(!isNaN(difference1)){
                      if (currentUrlPage !== urlPage1)
                         window.location.href = urlPage1 + queryParametars + "#about";
                 }
-                else if(difference2 != NaN){
+                else if(!isNaN(difference2)){
                      if (currentUrlPage !== urlPage2)
                         window.location.href = urlPage2 + queryParametars + "#about";
                 }
