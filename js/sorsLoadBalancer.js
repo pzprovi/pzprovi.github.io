@@ -23,35 +23,31 @@
         _mirrorCheck: 0,
 
         loadBalancer: function (queryParametars) {
-
+            if (queryParametars != "") {
+                queryParametars = "?search=" + queryParametars;
+            }
             var dtBeging1;
             var dtBeging2;
-            //var dtBeging3;
-           // var dtBeging4;
+           
 
             var dtEnd1;
             var dtEnd2;
-           // var dtEnd3;
-           // var dtEnd4;
+          
             var dtMaxDate = new Date(8640000000000000);
 
             var urlPage1 = "https://aisub.bsite.net/";
             var urlPage2 = "https://subsdiving.somee.com/";
 
-            // var urlPage2 = "http://subtitles.free.bg/";
           
-            // var urlPage4 = "http://pzprovi.github.io/";
 
             var request = new XMLHttpRequest();
             var request2 = new XMLHttpRequest();
-          //  var request3 = new XMLHttpRequest();
-          //  var request4 = new XMLHttpRequest();
-            
+        
             // window.location.href = urlPage1 + '?search=' + queryParametars;
             // return;
             
             if (Balancer.isIeBrowser()) {
-                window.location.href = urlPage1 + queryParametars;
+                window.location.href = urlPage1 + '?search=' + queryParametars;
                 return;
             }
 
@@ -209,8 +205,7 @@
         redirectToFastMirror: function (counter, queryParametars,
             urlPage1, dtBeging1, dtEnd1,
             urlPage2, dtBeging2, dtEnd2
-           // urlPage3, dtBeging3, dtEnd3,
-          //  urlPage4, dtBeging4, dtEnd4
+          
          ) {
             if (counter >= 2) {
 
@@ -218,13 +213,10 @@
 
                 var difference1 = dtEnd1 - dtBeging1;
                 var difference2 = dtEnd2 - dtBeging2;
-             //   var difference3 = dtEnd3 - dtBeging3;
-             //   var difference4 = dtEnd4 - dtBeging4;
+            
                 
                 
-                if (queryParametars != "") {
-                    queryParametars = "?search=" + queryParametars;
-                }
+                 
                 
 
                 if ( !isNaN(difference1) && difference1 <= difference2) {
@@ -246,16 +238,7 @@
                 
                 
                 
-/*
-                else if (difference3 <= difference1 && difference3 <= difference2 && difference3 <= difference4) {
-                    if (currentUrlPage !== urlPage3)
-                        window.location.href = urlPage3 + queryParametars + "#about";
-                }
-                else if (difference4 <= difference1 && difference4 <= difference2 && difference4 <= difference3) {
-                    if (currentUrlPage !== urlPage4)
-                        window.location.href = urlPage4 + queryParametars + "#about";
-                }
-*/
+ 
                 return true;
             }
             return false;
