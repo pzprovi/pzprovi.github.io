@@ -8,7 +8,7 @@ Technologies we use (UI):
  - HTML5
  - JS
  - JQuery
- - React js
+ - Sors Simfast.JS 
  - Electron
  - Ant Design
  - CSS
