@@ -26,27 +26,29 @@
 
             var dtBeging1;
             var dtBeging2;
-            var dtBeging3;
-            var dtBeging4;
+            //var dtBeging3;
+           // var dtBeging4;
 
             var dtEnd1;
             var dtEnd2;
-            var dtEnd3;
-            var dtEnd4;
+           // var dtEnd3;
+           // var dtEnd4;
             var dtMaxDate = new Date(8640000000000000);
 
             var urlPage1 = "https://aisub.bsite.net/";
-            var urlPage2 = "http://subtitles.free.bg/";
-            var urlPage3 = "http://subsdiving3.somee.com/";
-            var urlPage4 = "http://pzprovi.github.io/";
+            var urlPage2 = "https://subsdiving.somee.com/";
+
+            // var urlPage2 = "http://subtitles.free.bg/";
+          
+            // var urlPage4 = "http://pzprovi.github.io/";
 
             var request = new XMLHttpRequest();
             var request2 = new XMLHttpRequest();
-            var request3 = new XMLHttpRequest();
-            var request4 = new XMLHttpRequest();
+          //  var request3 = new XMLHttpRequest();
+          //  var request4 = new XMLHttpRequest();
             
-            window.location.href = urlPage1 + '?search=' + queryParametars;
-            return;
+            // window.location.href = urlPage1 + '?search=' + queryParametars;
+            // return;
             
             if (Balancer.isIeBrowser()) {
                 window.location.href = urlPage1 + queryParametars;
@@ -67,9 +69,9 @@
                     dtEnd1 = new Date($.now());
                     Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
                         urlPage1, dtBeging1, dtEnd1,
-                        urlPage2, dtBeging2, dtEnd2,
-                        urlPage3, dtBeging3, dtEnd3,
-                        urlPage4, dtBeging4, dtEnd4
+                        urlPage2, dtBeging2, dtEnd2
+                     //   urlPage3, dtBeging3, dtEnd3,
+                     //   urlPage4, dtBeging4, dtEnd4
                     );
 
                 }
@@ -89,14 +91,14 @@
                     dtEnd2 = new Date($.now());
                     Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
                         urlPage1, dtBeging1, dtEnd1,
-                        urlPage2, dtBeging2, dtEnd2,
-                        urlPage3, dtBeging3, dtEnd3,
-                        urlPage4, dtBeging4, dtEnd4
+                        urlPage2, dtBeging2, dtEnd2
+                    //    urlPage3, dtBeging3, dtEnd3,
+                     //   urlPage4, dtBeging4, dtEnd4
                     );
                 }
             };
 
-
+/*
             request3.open('GET', urlPage3, true);
             request3.onload = function () {
                 if (this.status === 404) {
@@ -139,15 +141,16 @@
                 }
             };
 
+      */
             dtBeging1 = new Date($.now());
             dtBeging2 = dtBeging1;
-            dtBeging3 = dtBeging1;
-            dtBeging4 = dtBeging1;
+        //    dtBeging3 = dtBeging1;
+       //     dtBeging4 = dtBeging1;
 
             request.send();
             request2.send();
-            request3.send();
-            request4.send();
+           // request3.send();
+            // request4.send();
         },
 
         isNull: function (o) {
@@ -184,17 +187,18 @@
 
         redirectToFastMirror: function (counter, queryParametars,
             urlPage1, dtBeging1, dtEnd1,
-            urlPage2, dtBeging2, dtEnd2,
-            urlPage3, dtBeging3, dtEnd3,
-            urlPage4, dtBeging4, dtEnd4) {
-            if (counter === 4) {
+            urlPage2, dtBeging2, dtEnd2
+           // urlPage3, dtBeging3, dtEnd3,
+          //  urlPage4, dtBeging4, dtEnd4
+         ) {
+            if (counter === 2) {
 
                 var currentUrlPage = "http://" + $(location).attr('hostname') + "/";
 
                 var difference1 = dtEnd1 - dtBeging1;
                 var difference2 = dtEnd2 - dtBeging2;
-                var difference3 = dtEnd3 - dtBeging3;
-                var difference4 = dtEnd4 - dtBeging4;
+             //   var difference3 = dtEnd3 - dtBeging3;
+             //   var difference4 = dtEnd4 - dtBeging4;
 
                 if (difference1 <= difference2 && difference1 <= difference3 && difference1 <= difference4) {
                     if (currentUrlPage !== urlPage1)
@@ -204,6 +208,7 @@
                     if (currentUrlPage !== urlPage2)
                         window.location.href = urlPage2 + queryParametars + "#about";
                 }
+/*
                 else if (difference3 <= difference1 && difference3 <= difference2 && difference3 <= difference4) {
                     if (currentUrlPage !== urlPage3)
                         window.location.href = urlPage3 + queryParametars + "#about";
@@ -212,7 +217,7 @@
                     if (currentUrlPage !== urlPage4)
                         window.location.href = urlPage4 + queryParametars + "#about";
                 }
-
+*/
                 return true;
             }
             return false;
