@@ -233,6 +233,17 @@
                     if (currentUrlPage !== urlPage2)
                         window.location.href = urlPage2 + queryParametars + "#about";
                 }
+                else if(difference1 != NaN){
+                     if (currentUrlPage !== urlPage1)
+                        window.location.href = urlPage1 + queryParametars + "#about";
+                }
+                else if(difference2 != NaN){
+                     if (currentUrlPage !== urlPage2)
+                        window.location.href = urlPage2 + queryParametars + "#about";
+                }
+                
+                
+                
 /*
                 else if (difference3 <= difference1 && difference3 <= difference2 && difference3 <= difference4) {
                     if (currentUrlPage !== urlPage3)
