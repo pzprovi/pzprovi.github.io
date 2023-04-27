@@ -65,7 +65,7 @@
             };
             request.onreadystatechange = function () {
                 Balancer._mirrorCheck++;
-                if (request.readyState === 4 && request.status === 0) {
+                if (request.readyState === 2 && request.status === 200) {
                     dtEnd1 = new Date($.now());
                     Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
                         urlPage1, dtBeging1, dtEnd1,
@@ -87,7 +87,7 @@
             };
             request2.onreadystatechange = function () {
                 Balancer._mirrorCheck++;
-                if (request2.readyState === 4 && request2.status === 0) {
+                if (request2.readyState === 2 && request2.status === 200) {
                     dtEnd2 = new Date($.now());
                     Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
                         urlPage1, dtBeging1, dtEnd1,
