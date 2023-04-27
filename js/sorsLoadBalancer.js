@@ -220,12 +220,16 @@
                 var difference2 = dtEnd2 - dtBeging2;
              //   var difference3 = dtEnd3 - dtBeging3;
              //   var difference4 = dtEnd4 - dtBeging4;
+                
+                
+                
+                
 
-                if (difference1 <= difference2 ) {
+                if ( difference1 != NaN && difference1 <= difference2) {
                     if (currentUrlPage !== urlPage1)
                         window.location.href = urlPage1 + queryParametars + "#about";
                 }
-                else if (difference2 <= difference1 ) {
+                else if ( difference2 != NaN && difference2 <= difference1 ) {
                     if (currentUrlPage !== urlPage2)
                         window.location.href = urlPage2 + queryParametars + "#about";
                 }
