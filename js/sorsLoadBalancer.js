@@ -64,8 +64,9 @@
                 }
             };
             request.onreadystatechange = function () {
-                Balancer._mirrorCheck++;
-                if (request.readyState === 2 && request.status === 200) {
+               
+                if (request.readyState === 4 && request.status === 200) {
+                     Balancer._mirrorCheck++;
                     dtEnd1 = new Date($.now());
                     Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
                         urlPage1, dtBeging1, dtEnd1,
@@ -86,8 +87,9 @@
                 }
             };
             request2.onreadystatechange = function () {
-                Balancer._mirrorCheck++;
-                if (request2.readyState === 2 && request2.status === 200) {
+                
+                if (request2.readyState === 4 && request2.status === 200) {
+                    Balancer._mirrorCheck++;
                     dtEnd2 = new Date($.now());
                     Balancer.redirectToFastMirror(Balancer._mirrorCheck, queryParametars,
                         urlPage1, dtBeging1, dtEnd1,
